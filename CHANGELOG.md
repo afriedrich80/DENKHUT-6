@@ -5,6 +5,12 @@ Alle nennenswerten Änderungen an DENKHUT-6 werden in dieser Datei dokumentiert.
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
 und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 
+## [0.1.5] – 2026-06-04 – Geführter Kurzstart
+
+### Added
+
+- **Interaktiver Start ohne Thema:** `/denkhut-6:denkhut` (ohne Argument) begrüßt jetzt kurz, erklärt das Verfahren und fragt nach dem Anliegen (mit Beispielen für Entscheidung / Idee / Bewertung / Schnell-Review), statt eine leere Analyse zu starten. Wird ein Thema mitgegeben, läuft es wie bisher direkt. Im Orchestrator-Skill (`denkhut-6`) als Phase-0 verankert, damit es auch bei direktem Aufruf greift.
+
 ## [0.1.4] – 2026-06-04 – Methodik-Treue (De-Bono-Audit)
 
 Behebt zwei in einem intensiven Methodik-Audit gefundene Treue-Lücken. Die Kern-Architektur war bereits methodenkonform; dies schärft Sequenz und Lehrbeispiele.
@@ -89,6 +95,7 @@ Behebt zwei in einem intensiven Methodik-Audit gefundene Treue-Lücken. Die Kern
 - Plugin-Manifest, MIT-Lizenz und `.gitignore`.
 - Marketplace-Manifest `.claude-plugin/marketplace.json` für die Ein-Befehl-Installation aus GitHub (`/plugin marketplace add afriedrich80/DENKHUT-6` → `/plugin install denkhut-6@denkhut-6`).
 
+[0.1.5]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.5
 [0.1.4]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.4
 [0.1.3]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.3
 [0.1.2]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.2

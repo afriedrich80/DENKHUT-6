@@ -4,7 +4,7 @@
 
 ![Lizenz: MIT](https://img.shields.io/badge/Lizenz-MIT-green.svg)
 ![Built for Claude Code](https://img.shields.io/badge/Built%20for-Claude%20Code-5A4FCF.svg)
-![Version](https://img.shields.io/badge/Version-0.1.4-blue.svg)
+![Version](https://img.shields.io/badge/Version-0.1.5-blue.svg)
 
 **DENKHUT-6** bringt Edward de Bonos Methode der *Six Thinking Hats* als echtes Multiagentensystem nach Claude Code: Jeder Denkhut ist ein eigener Subagent mit isoliertem Kontext, der Blaue Hut orchestriert die Sitzung.
 
@@ -94,9 +94,17 @@ Alternativ den entpackten Ordner als **lokalen Marketplace** registrieren (er en
 
 ### Nutzung
 
-Nach der Installation sind Orchestrator-Skill und die sechs Hut-Subagents aktiv. Eine Sitzung startest du auf zwei Wegen:
+Nach der Installation sind Orchestrator-Skill und die sechs Hut-Subagents aktiv. Eine Sitzung startest du auf drei Wegen:
 
-- **Per Slash-Command** (Plugin-Skills sind namespaced mit `denkhut-6:`):
+- **Geführt (am einfachsten)** – nur den Kurzbefehl ohne Thema eingeben:
+
+  ```
+  /denkhut-6:denkhut
+  ```
+
+  DENKHUT-6 begrüßt dich, erklärt kurz das Verfahren und fragt nach deinem Anliegen – du schreibst einfach deine Idee/Frage, der Rest läuft geführt.
+
+- **Direkt mit Thema** (Plugin-Skills sind namespaced mit `denkhut-6:`):
 
   ```
   /denkhut-6:denkhut <Thema>

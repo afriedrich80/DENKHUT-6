@@ -36,6 +36,7 @@ Jeder Hut liefert denselben **Output-Envelope**:
 ## Ablauf in Phasen
 
 ### Phase 1 – Blau: Eröffnung & Rahmen
+0. **Kein Thema genannt?** Wurde der Skill **ohne** Anliegen aufgerufen (leerer Aufruf), starte **keine** Analyse. Begrüße den Nutzer kurz, erkläre in 2–3 Sätzen, was DENKHUT-6 tut, und **frage nach seinem Anliegen** (mit ein paar Beispielen: Entscheidung, Idee/Produktidee, etwas bewerten, schnelles Review). Warte auf die Antwort, dann weiter mit Schritt 1.
 1. **Problem klären.** Wenn die Fragestellung unscharf ist, stelle dem Nutzer **1–3 gezielte Rückfragen** (Ziel, Scope, Constraints, Entscheidungskriterien, Stakeholder). Sonst direkt weiter.
 2. **Sequenz wählen.** Default = `entscheidung`. Bei Bewertung, Ideenfindung oder Schnell-Review die passende Sequenz wählen – nutze dazu den Skill **denkhut-sequenz**.
 3. **Sitzungsordner anlegen** unter `denkhut-sitzungen/<slug>/` (slug = kurzer kebab-case-Titel des Themas).
