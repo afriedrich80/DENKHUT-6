@@ -70,7 +70,7 @@ Jeder gespawnte Subagent bekommt im Prompt **explizit** mitgegeben:
 - **Die relevanten Vor-Outputs**, die er braucht:
   - Weiß: nur das Problemstatement.
   - Grün: Problemstatement + Weiß-Fakten.
-  - Gelb / Schwarz / Rot: Problemstatement + Weiß-Fakten + **die Grün-Ideen** (genau diese bewerten/erfühlen sie).
+  - Gelb / Schwarz / Rot: Problemstatement + Weiß-Fakten + den **Bewertungsgegenstand** – die **Grün-Ideen**, falls Grün vorlief, sonst die in der Eröffnung als `I1..` registrierten **Optionen / den Vorschlag** (`bewertung`, `schnell-review`). Genau diese bewerten/erfühlen sie.
 - **Erwartetes Format:** der Output-Envelope (`hut`, `phase_nr`, `zusammenfassung`, `eintraege[]`, `offene_punkte[]`, `konfidenz`).
 
 ## Spawn-Muster

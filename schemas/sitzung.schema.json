@@ -77,7 +77,7 @@
     },
     "Idee": {
       "title": "Idee",
-      "description": "Gruener Hut: ein Loesungsvorschlag. Spiegel von hut-output.schema.json#/$defs/Idee.",
+      "description": "Gruener Hut: eine Idee oder (in Bewertungs-Sequenzen) eine vom Blauen Hut registrierte, zu bewertende Option. Spiegel von hut-output.schema.json#/$defs/Idee.",
       "type": "object",
       "properties": {
         "id": { "type": "string", "pattern": "^I[0-9]+$", "description": "ID-Konvention I1, I2, ..." },
@@ -111,7 +111,7 @@
       "properties": {
         "id": { "type": "string", "pattern": "^N[0-9]+$", "description": "ID-Konvention N1, N2, ..." },
         "nutzen": { "type": "string", "description": "Der Nutzen." },
-        "bezug_idee": { "type": "string", "pattern": "^I[0-9]+$", "description": "ID der bezogenen Idee." },
+        "bezug_idee": { "type": "string", "pattern": "^I[0-9]+$", "description": "ID der bezogenen Idee bzw. zu bewertenden Option." },
         "bedingung": { "type": "string", "description": "Voraussetzung fuer den Nutzen." },
         "wirkungshorizont": { "type": "string", "enum": ["kurz", "mittel", "lang"], "description": "Zeithorizont." }
       },
@@ -125,7 +125,7 @@
       "properties": {
         "id": { "type": "string", "pattern": "^R[0-9]+$", "description": "ID-Konvention R1, R2, ..." },
         "risiko": { "type": "string", "description": "Beschreibung des Risikos." },
-        "bezug_idee": { "type": "string", "pattern": "^I[0-9]+$", "description": "ID der bezogenen Idee." },
+        "bezug_idee": { "type": "string", "pattern": "^I[0-9]+$", "description": "ID der bezogenen Idee bzw. zu bewertenden Option." },
         "ursache": { "type": "string", "description": "Ursache des Risikos." },
         "eintrittswahrscheinlichkeit": { "type": "string", "enum": ["hoch", "mittel", "niedrig"], "description": "Eintrittswahrscheinlichkeit." },
         "auswirkung": { "type": "string", "enum": ["hoch", "mittel", "niedrig"], "description": "Schwere der Folgen." },

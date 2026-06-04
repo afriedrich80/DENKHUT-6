@@ -92,7 +92,7 @@
     },
     "Idee": {
       "title": "Idee",
-      "description": "Gruener Hut: ein kreativer Loesungsvorschlag.",
+      "description": "Gruener Hut: eine Idee. In Bewertungs-Sequenzen (bewertung, schnell-review) ohne vorgelagerten Gruenen Hut registriert der Blaue Hut hier auch die zu bewertende(n) Option(en) bzw. den Vorschlag, damit Gelb/Schwarz/Rot via bezug_idee darauf verweisen koennen.",
       "type": "object",
       "properties": {
         "id": { "type": "string", "description": "Eindeutige ID, Konvention I1, I2, ...", "pattern": "^I[0-9]+$" },
@@ -130,7 +130,7 @@
       "properties": {
         "id": { "type": "string", "description": "Eindeutige ID, Konvention N1, N2, ...", "pattern": "^N[0-9]+$" },
         "nutzen": { "type": "string", "description": "Der beschriebene Nutzen oder Vorteil." },
-        "bezug_idee": { "type": "string", "description": "ID der Idee, auf die sich der Nutzen bezieht.", "pattern": "^I[0-9]+$" },
+        "bezug_idee": { "type": "string", "description": "ID der Idee bzw. der zu bewertenden Option, auf die sich der Nutzen bezieht.", "pattern": "^I[0-9]+$" },
         "bedingung": { "type": "string", "description": "Voraussetzung, unter der der Nutzen eintritt." },
         "wirkungshorizont": { "type": "string", "description": "Zeitlicher Horizont, in dem der Nutzen wirkt.", "enum": ["kurz", "mittel", "lang"] }
       },
@@ -144,7 +144,7 @@
       "properties": {
         "id": { "type": "string", "description": "Eindeutige ID, Konvention R1, R2, ...", "pattern": "^R[0-9]+$" },
         "risiko": { "type": "string", "description": "Beschreibung des Risikos." },
-        "bezug_idee": { "type": "string", "description": "ID der Idee, auf die sich das Risiko bezieht.", "pattern": "^I[0-9]+$" },
+        "bezug_idee": { "type": "string", "description": "ID der Idee bzw. der zu bewertenden Option, auf die sich das Risiko bezieht.", "pattern": "^I[0-9]+$" },
         "ursache": { "type": "string", "description": "Warum das Risiko entsteht." },
         "eintrittswahrscheinlichkeit": { "type": "string", "description": "Wie wahrscheinlich das Risiko eintritt.", "enum": ["hoch", "mittel", "niedrig"] },
         "auswirkung": { "type": "string", "description": "Wie schwer die Folgen waeren.", "enum": ["hoch", "mittel", "niedrig"] },

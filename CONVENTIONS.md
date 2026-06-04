@@ -28,12 +28,14 @@ Der Orchestrator reicht jeder Rolle nur den **minimal nötigen** Vor-Kontext.
 | Blau (Start) | Roh-Thema | Problem-Objekt, gewählte Sequenz |
 | Weiß | Problem | Liste von Fakten |
 | Grün | Problem, Fakten | Liste von Ideen |
-| Gelb | Problem, Ideen | Liste von Nutzenpunkten |
-| Schwarz | Problem, Ideen | Liste von Risiken |
-| Rot | Problem, Ideen (knapp) | Liste von Emotionen |
+| Gelb | Problem, Bewertungsgegenstand (Ideen **oder** vorgelegte Optionen) | Liste von Nutzenpunkten |
+| Schwarz | Problem, Bewertungsgegenstand (Ideen **oder** vorgelegte Optionen) | Liste von Risiken |
+| Rot | Problem, Bewertungsgegenstand (knapp) | Liste von Emotionen |
 | Blau (Ende) | alle Ausgaben | Synthese, Protokoll |
 
-Gelb und Schwarz erhalten dieselbe Ideenliste, aber **nicht** die Ausgabe der jeweils anderen Rolle. Rot erhält **keine** Pro/Contra-Argumente.
+Gelb und Schwarz erhalten denselben Bewertungsgegenstand, aber **nicht** die Ausgabe der jeweils anderen Rolle. Rot erhält **keine** Pro/Contra-Argumente.
+
+**Bewertungsgegenstand:** In Sequenzen ohne vorgelagerten Grünen Hut (`bewertung`, `schnell-review`) registriert Blau die zu bewertenden Optionen bzw. den Vorschlag als Ideen-Einträge (`I1..`), auf die Gelb/Schwarz/Rot via `bezug_idee`/`bezug` verweisen. So bleibt die Referenzierung in jeder Sequenz identisch.
 
 ## 4. Output-Envelope
 
@@ -50,7 +52,7 @@ Jede Hut-Rolle liefert einheitlich:
 }
 ```
 
-Blau (Ende) ersetzt `eintraege` durch ein `synthese`-Objekt. Die typisierten Beiträge (Fakt, Idee, Emotion, Nutzenpunkt, Risiko, Synthese) und ihre Felder sind in [DATENMODELL.md](DATENMODELL.md) vollständig definiert und für jede Implementierung verbindlich.
+Blau hält `eintraege` leer (`[]`): die **Eröffnung** nutzt die Felder `problem` und `sequenz`, der **Abschluss** das Feld `synthese`. Die typisierten Beiträge (Fakt, Idee, Emotion, Nutzenpunkt, Risiko) und die `Synthese` sowie ihre Felder sind in [DATENMODELL.md](DATENMODELL.md) vollständig definiert und für jede Implementierung verbindlich.
 
 ## 5. Orchestrierungs-Workflow
 
@@ -70,7 +72,7 @@ Blau (Ende) ersetzt `eintraege` durch ein `synthese`-Objekt. Die typisierten Bei
 | ideenfindung | blau → weiss → gruen → rot → gelb → schwarz → blau |
 | schnell-review | blau → weiss → schwarz → gelb → blau |
 
-**Parallelitätsregeln:** Weiß steht vor Grün/Gelb/Schwarz/Rot. Gelb und Schwarz laufen parallel. Blau steht immer zuerst und zuletzt.
+**Parallelitätsregeln:** Weiß steht vor den faktenbasierten Hüten (Grün/Gelb/Schwarz); Rot ist faktenunabhängig und darf je nach Sequenz früher stehen (z. B. `bewertung`: Rot vor Weiß). Gelb und Schwarz laufen parallel. Blau steht immer zuerst und zuletzt.
 
 ## 6. Governance und Logging
 

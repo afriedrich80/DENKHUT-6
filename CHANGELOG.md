@@ -5,6 +5,28 @@ Alle nennenswerten Änderungen an DENKHUT-6 werden in dieser Datei dokumentiert.
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
 und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 
+## [0.1.3] – 2026-06-04 – Robuste Verträge & automatisierte Prüfung
+
+### Added
+
+- **Konsistenz-Skript `scripts/validate.py`**: extrahiert alle Markdown-JSON-Blöcke, validiert die Hut-Envelopes gegen `hut-output.schema.json`, prüft die kanonische Blau-Form und alle ID-Referenzen (`bezug_idee`/`basiert_auf`). 20 Envelopes / 43 Referenzen grün.
+- **GitHub-Actions-Workflow `.github/workflows/validate.yml`** führt den Konsistenz-Check bei Push/PR aus – jedes Release ist damit automatisch abgesichert.
+
+### Changed
+
+- **Input-Verträge sequenzfest gemacht:** Gelb/Schwarz/Rot bewerten den **Bewertungsgegenstand** – Grün-Ideen, falls vorhanden, sonst die vom Blauen Hut in der Eröffnung als `I1..` registrierten **Optionen/den Vorschlag** (für `bewertung`/`schnell-review`, wo kein Grün vorausgeht). Agenten, Orchestrator-Skill, Sequenz-Skill und beide Schemas (`Idee`/`bezug_idee`) entsprechend präzisiert.
+- **CONVENTIONS.md nachgezogen:** Blau-Output (`eintraege: []` + `problem`/`sequenz`/`synthese`), Bewertungsgegenstand und die verfeinerte Reihenfolge-Regel sind jetzt technisch deckungsgleich mit `DATENMODELL.md`/Schema.
+
+### Fixed
+
+- **README-Stände aktualisiert:** Versions-Badge auf `0.1.3`; Projektstruktur listet jetzt auch `beispiel/software-produktidee/`.
+- **Traceability im Software-Beispiel:** In der Synthese sind `I4` (aus der Schwarz-Kritik an `I3`/`R1` abgeleitet) und `I8` (spätere Stufe) explizit als noch **nicht** durch Gelb/Schwarz geprüft markiert und als nächster Iterationsschritt aufgenommen.
+- **Reihenfolge-Regel** auch in Sequenz-Skill und `commands/denkhut.md` präzisiert (Weiß vor den faktenbasierten Hüten; Rot darf früher).
+
+### Decided
+
+- **`--strict`-Validierung:** `CLAUDE.md` bleibt bewusst Contributor-Kontext am Repo-Root. Die `--strict`-Warnung dazu wird akzeptiert; Release-Check/CI nutzen den Validator **ohne** `--strict`.
+
 ## [0.1.2] – 2026-06-04 – Spezifikations-Konsistenz
 
 ### Changed
@@ -51,6 +73,7 @@ und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 - Plugin-Manifest, MIT-Lizenz und `.gitignore`.
 - Marketplace-Manifest `.claude-plugin/marketplace.json` für die Ein-Befehl-Installation aus GitHub (`/plugin marketplace add afriedrich80/DENKHUT-6` → `/plugin install denkhut-6@denkhut-6`).
 
+[0.1.3]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.3
 [0.1.2]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.2
 [0.1.1]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.1
 [0.1.0]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.0

@@ -32,6 +32,12 @@ Begründung der Zuschnitt-Logik:
   als Burggraben gegen Nachahmung (R7). Geschäftsmodell I7 (Pay-per-Angebot)
   zuerst als Validierungs-/Pricing-Test, nicht als finales Modell.
 
+> **Traceability-Hinweis:** Gelb und Schwarz haben direkt das Top-Set **I1, I3, I5, I7**
+> bewertet. **I4** (Co-Pilot) ist eine in dieser Synthese **aus der Schwarz-Kritik an I3
+> (Risiko R1) abgeleitete** Verfeinerung, **I8** (Stammdaten-Netzwerk) eine spätere
+> Ausbaustufe – beide sind **noch nicht eigenständig** durch Gelb/Schwarz geprüft und
+> daher als nächster Iterationsschritt markiert (`iteration_noetig: true`).
+
 ## Pro (aus Gelb)
 
 - N1 — Drastische Zeitersparnis (I3/I4-Workflow).
@@ -135,6 +141,7 @@ Begründung der Zuschnitt-Logik:
       "Pricing-Test (Abo vs. Pay-per-Angebot) zur Zahlungsbereitschaft.",
       "Technischer Spike: Sprache zu Co-Pilot-Vorschlägen, Erkennung im Lärm.",
       "DSGVO-Klärung WhatsApp-Kanal vs. eigene App.",
+      "Co-Pilot I4 (aus R1 abgeleitet) und Stammdaten-Netzwerk I8 in der nächsten Iteration durch Gelb/Schwarz bewerten - bislang nur Top-Set I1/I3/I5/I7 geprüft.",
       "Re-Iteration nach Validierung, Go/No-Go für MVP-Bau."
     ],
     "iteration_noetig": true

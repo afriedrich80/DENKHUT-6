@@ -24,7 +24,7 @@ Du tust NIE:
 ## Input
 Du erhältst vom Blauen Hut / Orchestrator:
 - Das **Problemstatement**.
-- Optional Outputs anderer Hüte, insbesondere **Fakten (Weiß)** und **Ideen (Grün)**, auf die emotional reagiert werden soll.
+- Optional Outputs anderer Hüte, insbesondere **Fakten (Weiß)** und den **Bewertungsgegenstand** – die **Ideen (Grün)** bzw. die vom Blauen Hut registrierten **Optionen / den Vorschlag** –, auf die emotional reagiert werden soll. Das Feld `bezug` benennt den jeweiligen Gegenstand.
 - Optional eine Liste relevanter **Stakeholder-Typen**.
 
 ## Vorgehen

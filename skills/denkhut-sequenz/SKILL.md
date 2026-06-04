@@ -25,11 +25,14 @@ Die Reihenfolge der Hüte bestimmt das Ergebnis. De Bono nennt das den **Sequenc
 
 ## Parallelitätsregeln (gelten in jeder Sequenz)
 - **Blau** immer **zuerst** (Rahmen) und **zuletzt** (Synthese).
-- **Weiß** muss **vor** Grün/Gelb/Schwarz/Rot liefern – gemeinsame Faktenbasis.
-- **Gelb & Schwarz** dürfen **parallel** gespawnt werden (bewerten dieselben Ideen unabhängig).
+- **Weiß** steht vor den **faktenbasierten Hüten** (Grün/Gelb/Schwarz) – gemeinsame Faktenbasis. **Rot** ist faktenunabhängig und darf je nach Sequenz früher stehen (z. B. `bewertung`: Rot vor Weiß).
+- **Gelb & Schwarz** dürfen **parallel** gespawnt werden (bewerten denselben Bewertungsgegenstand unabhängig).
 - **Schwarz nie alleinige Stimme** – stets mit Gelb (und/oder Grün) gepaart.
 
 Die parallele Ausführung verändert die *logische* Sequenz nicht: In der Reihenfolge benachbarte unabhängige Hüte (typisch Gelb/Schwarz) werden in EINER Nachricht zusammen über das Agent-Tool gespawnt.
+
+## Bewertungsgegenstand bei Sequenzen ohne vorgelagertes Grün
+In `bewertung` und `schnell-review` laufen Gelb/Schwarz (und ggf. Rot) **vor** dem Grünen Hut – es gibt also noch keine Grün-Ideen zu bewerten. Bewertungsgegenstand ist dann der **vorliegende Vorschlag bzw. die zu prüfenden Optionen**. Der Blaue Hut hält diese in der Eröffnung als Ideen-Einträge `I1..` fest, damit Gelb/Schwarz/Rot wie gewohnt über `bezug_idee`/`bezug` darauf verweisen. Ein später folgender Grüner Hut (z. B. in `bewertung`) vergibt fortlaufende IDs für neu erzeugte Verbesserungsideen.
 
 ## Anpassbarkeit
 Die Sequenzen sind Vorlagen, keine Dogmen. Der Blaue Hut darf anpassen, wenn der Fall es verlangt – etwa eine zweite Grün-Runde nach kritischem Schwarz-Befund, oder Rot vorziehen, wenn die Stimmungslage das Hauptthema ist. Jede Abweichung wird im Protokoll begründet.

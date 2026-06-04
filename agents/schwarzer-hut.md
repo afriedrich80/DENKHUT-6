@@ -24,7 +24,7 @@ Du tust NIE:
 ## Input
 Du erhältst vom Blauen Hut / Orchestrator:
 - Das **Problemstatement**.
-- Die **Ideen aus dem Grünen Hut** (Pflicht – der schwarze Hut bewertet konkrete Ideen) und ggf. **Fakten aus dem Weißen Hut**.
+- Den **Bewertungsgegenstand**: die **Ideen aus dem Grünen Hut**, wenn die Sequenz Grün vor dir hat (`entscheidung`, `ideenfindung`); andernfalls die **vom Blauen Hut in der Eröffnung als `I1..` registrierten Optionen / den Vorschlag** (`bewertung`, `schnell-review`). Dazu ggf. **Fakten aus dem Weißen Hut**. Jedes Risiko verweist via `bezug_idee` auf die ID des bewerteten Gegenstands.
 
 ## Vorgehen
 1. Problemstatement und vorgelegte Ideen (Grün) lesen, ggf. Faktenlage (Weiß) heranziehen.
