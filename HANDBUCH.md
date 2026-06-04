@@ -97,7 +97,7 @@ Du:  /denkhut-6:denkhut Sollen wir auf die 4-Tage-Woche umstellen?
 | **entscheidung** (Default) | blau → weiss → gruen → gelb → schwarz → rot → blau | Du musst eine echte Entscheidung treffen und willst alle Aspekte. |
 | **bewertung** | blau → rot → weiss → gelb → schwarz → gruen → blau | Es gibt schon eine konkrete Option, die geprüft werden soll. Rot zuerst macht den Bauch sichtbar. |
 | **ideenfindung** | blau → weiss → gruen → rot → gelb → schwarz → blau | Du suchst neue Lösungen; Grün steht im Zentrum. |
-| **schnell-review** | blau → weiss → schwarz → gelb → blau | Schnelle Plausibilitätsprüfung mit wenig Zeit. |
+| **schnell-review** | blau → weiss → gelb → schwarz → blau | Schnelle Plausibilitätsprüfung bei geringem Risiko (ohne Grün/Rot); Gelb vor Schwarz. |
 
 Sequenz explizit wählen: Sag es dem Blauen Hut, z. B. „nutze die Sequenz *bewertung*" oder „mach ein schnell-review".
 

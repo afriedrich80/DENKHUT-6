@@ -148,7 +148,7 @@ Der Blaue Hut gibt jedem Hut nur den jeweils **relevanten** Vor-Kontext. So blei
 | `entscheidung` (Default) | blau → weiss → gruen → gelb → schwarz → rot → blau | umfassende Entscheidungen |
 | `bewertung` | blau → rot → weiss → gelb → schwarz → gruen → blau | bestehende Option prüfen |
 | `ideenfindung` | blau → weiss → gruen → rot → gelb → schwarz → blau | neue Lösungen suchen |
-| `schnell-review` | blau → weiss → schwarz → gelb → blau | schnelle Plausibilitätsprüfung |
+| `schnell-review` | blau → weiss → gelb → schwarz → blau | schnelle Plausibilitätsprüfung bei geringem Risiko (ohne Grün/Rot) |
 
 **Reihenfolge-Regeln:** Weiß steht vor den **faktenbasierten Analyse-Hüten** (Grün/Gelb/Schwarz), damit diese auf einer gemeinsamen Faktenbasis arbeiten. **Rot** (Bauchgefühl) ist faktenunabhängig und darf je nach Sequenz **früher** stehen – z. B. in `bewertung`, wo bewusst zuerst eine spontane emotionale Resonanz gesammelt wird. Gelb und Schwarz laufen **parallel**. Blau steht immer **zuerst und zuletzt**.
 

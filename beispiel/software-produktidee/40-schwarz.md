@@ -98,8 +98,8 @@ Differenzierung.
     }
   ],
   "offene_punkte": [
-    "R1 ist das zentrale Risiko und korrespondiert mit der emotionalen Skepsis (E2, E7) - der Produktzuschnitt muss darauf antworten.",
-    "R7 verlangt einen Burggraben (z. B. Stammdaten-Netzwerk I8) für nachhaltige Differenzierung."
+    "R1 (falsche Auto-Preise) ist das schwerste Risiko und korrespondiert mit der emotionalen Skepsis (E2, E7).",
+    "R7 (Nachahmung durch etablierte Suiten) bedroht die Differenzierung der Vollautomatik I3."
   ],
   "konfidenz": "mittel"
 }

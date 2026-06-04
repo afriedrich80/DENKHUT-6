@@ -91,8 +91,8 @@ Top-Ideen** wie bei Gelb (**I1**, **I4**, **I7**), jeweils mit
     }
   ],
   "offene_punkte": [
-    "R1, R2 und R7 sind die K.-o.-Risiken der Vollumstellung und sprechen für einen vorgeschalteten Pilot.",
-    "R6 (Fairness) erfordert von Beginn an transparente Kommunikation und einen klaren Ausrollpfad."
+    "R1, R2 und R7 sind die schwersten Risiken einer sofortigen Vollumstellung.",
+    "R6 (Fairness) ist ein hohes Risiko zwischen Pilot- und Nicht-Pilot-Teams."
   ],
   "konfidenz": "mittel"
 }

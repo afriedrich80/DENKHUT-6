@@ -65,9 +65,9 @@ einer Quelle versehen.
     }
   ],
   "offene_punkte": [
-    "F3 und F5 sind Annahmen und sollten vor einer Vollumstellung empirisch belegt werden (z. B. im Pilot).",
-    "Wissenslücke F6 (Kundenreaktion) ist ein zentrales Risiko und braucht Messung.",
-    "Branchenspezifische Vergleichsdaten statt allgemeiner Studienlage wären wünschenswert."
+    "Offen: F3 und F5 sind Annahmen, empirische Belege liegen nicht vor.",
+    "Fehlt: gemessene Daten zur Kundenreaktion (F6) sind nicht erhoben.",
+    "Fehlt: branchenspezifische Vergleichsdaten statt allgemeiner Studienlage."
   ],
   "konfidenz": "mittel"
 }

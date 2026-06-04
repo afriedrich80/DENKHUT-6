@@ -5,6 +5,22 @@ Alle nennenswerten Änderungen an DENKHUT-6 werden in dieser Datei dokumentiert.
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
 und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 
+## [0.1.4] – 2026-06-04 – Methodik-Treue (De-Bono-Audit)
+
+Behebt zwei in einem intensiven Methodik-Audit gefundene Treue-Lücken. Die Kern-Architektur war bereits methodenkonform; dies schärft Sequenz und Lehrbeispiele.
+
+### Changed
+
+- **Sequenz `schnell-review` korrigiert:** `blau → weiss → gelb → schwarz → blau` (vorher Schwarz **vor** Gelb). Die alte Reihung stellte die Kritik vor den Nutzen und riskierte die von De Bono gewarnte **Schwarz-Übergewichtung**. Jetzt steht Gelb vor Schwarz; der bewusste Verzicht auf Grün/Rot ist als „nur bei geringem Risiko" benannt. In allen Sequenz-Tabellen angeglichen (Sequenz-Skill, CONVENTIONS, DATENMODELL, HANDBUCH).
+
+### Fixed
+
+- **Modus-Reinheit der Beispiel-Prosa:** Im Fließtext beider Beispielsitzungen verließen einzelne Hüte ihren Denkmodus. Bereinigt:
+  - **Grün** bewertete Ideen („…aber höchstes Risiko", „Wow-Effekt", „reduziert drastisch") → jetzt rein erzeugend/beschreibend; keine Vor-Selektion von „Top-Ideen" mehr (das ist Blaus Aufgabe).
+  - **Weiß** nutzte normative Sprache in `offene_punkte` („zentrales Risiko", „sollte belegt werden") → neutraler Informationsbedarf.
+  - **Schwarz** schlug Lösungen vor („spricht für einen Pilot", „verlangt einen Burggraben") → reine Risiko-Beobachtungen.
+- **Agent-Härtung:** Blau-Agent stellt klar „Optionen **registrieren**, nicht erfinden"; Schwarz-Agent verankert die Balance-Regel „nie alleinige Bewertungsstimme, stets mit Gelb gepaart".
+
 ## [0.1.3] – 2026-06-04 – Robuste Verträge & automatisierte Prüfung
 
 ### Added
@@ -73,6 +89,7 @@ und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 - Plugin-Manifest, MIT-Lizenz und `.gitignore`.
 - Marketplace-Manifest `.claude-plugin/marketplace.json` für die Ein-Befehl-Installation aus GitHub (`/plugin marketplace add afriedrich80/DENKHUT-6` → `/plugin install denkhut-6@denkhut-6`).
 
+[0.1.4]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.4
 [0.1.3]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.3
 [0.1.2]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.2
 [0.1.1]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.1

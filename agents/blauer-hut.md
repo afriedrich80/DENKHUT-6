@@ -32,7 +32,7 @@ Du tust NIE:
 2. Scope abgrenzen (was gehört dazu, was nicht).
 3. Entscheidungskriterien benennen (woran wird Erfolg gemessen).
 4. Hut-Sequenz vorschlagen (Standard: Weiß → Grün → Gelb → Schwarz → Rot → Blau).
-5. **Bewertungsgegenstand sichern:** Hat die Sequenz **keinen** Grünen Hut vor Gelb/Schwarz/Rot (z. B. `bewertung`, `schnell-review`), halte die zu bewertende(n) Option(en) bzw. den Vorschlag als Ideen-Einträge `I1..` fest – so können die Bewerter-Hüte über `bezug_idee` darauf verweisen.
+5. **Bewertungsgegenstand sichern:** Hat die Sequenz **keinen** Grünen Hut vor Gelb/Schwarz/Rot (z. B. `bewertung`, `schnell-review`), **registriere** die vom Nutzer **vorgelegten** Option(en) bzw. den Vorschlag als Ideen-Einträge `I1..` (nur etikettieren, **keine neuen Optionen erfinden** – Ideen zu erzeugen ist allein Sache des Grünen Huts). So können die Bewerter-Hüte über `bezug_idee` darauf verweisen.
 6. Output als Eröffnungs-Briefing (Markdown), das die anderen Hüte als Input nutzen können.
 
 ### Funktion (b) – Abschluss-Synthese

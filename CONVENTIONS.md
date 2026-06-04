@@ -70,7 +70,7 @@ Blau hält `eintraege` leer (`[]`): die **Eröffnung** nutzt die Felder `problem
 | entscheidung (Default) | blau → weiss → gruen → gelb → schwarz → rot → blau |
 | bewertung | blau → rot → weiss → gelb → schwarz → gruen → blau |
 | ideenfindung | blau → weiss → gruen → rot → gelb → schwarz → blau |
-| schnell-review | blau → weiss → schwarz → gelb → blau |
+| schnell-review | blau → weiss → gelb → schwarz → blau |
 
 **Parallelitätsregeln:** Weiß steht vor den faktenbasierten Hüten (Grün/Gelb/Schwarz); Rot ist faktenunabhängig und darf je nach Sequenz früher stehen (z. B. `bewertung`: Rot vor Weiß). Gelb und Schwarz laufen parallel. Blau steht immer zuerst und zuletzt.
 

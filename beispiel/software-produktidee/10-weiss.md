@@ -17,11 +17,11 @@ Jeder Eintrag ist als **Fakt**, **Annahme** oder **Wissenslücke** markiert.
 
 ## Notizen
 
-- F1/F2 stützen die Marktgröße und den Schmerzpunkt, sind aber teils
-  annahmebasiert (F2) und sollten durch Problem-Interviews gehärtet werden.
-- F6 ist die **kritischste Wissenslücke** für das Geschäftsmodell und muss vor
-  größeren Investitionen geschlossen werden.
-- F4 und F7 betreffen direkt die technische Machbarkeit und die Qualität des
+- F1/F2 betreffen Marktgröße und Schmerzpunkt; F2 ist annahmebasiert, eine
+  repräsentative Erhebung aus Problem-Interviews liegt nicht vor.
+- F6 ist eine offene Wissenslücke zum Geschäftsmodell; validierte
+  Pricing-Daten sind nicht erhoben.
+- F4 und F7 betreffen die technische Machbarkeit und die Qualität des
   Kern-Workflows.
 
 ```json
@@ -81,9 +81,9 @@ Jeder Eintrag ist als **Fakt**, **Annahme** oder **Wissenslücke** markiert.
     }
   ],
   "offene_punkte": [
-    "F6: Zahlungsbereitschaft muss durch Pricing-Test/Interviews geschlossen werden.",
-    "F3: Wettbewerbslandschaft muss gründlicher recherchiert werden, bevor Differenzierung behauptet wird.",
-    "F4: Robustheit der Spracherkennung in Baustellenlärm ist noch nicht praktisch getestet."
+    "Fehlt: Daten zur Zahlungsbereitschaft (F6) aus Pricing-Test oder Interviews sind nicht erhoben.",
+    "Offen: die Wettbewerbslandschaft (F3) ist nicht abschließend recherchiert.",
+    "Offen: die Robustheit der Spracherkennung in Baustellenlärm (F4) ist praktisch nicht getestet."
   ],
   "konfidenz": "mittel"
 }

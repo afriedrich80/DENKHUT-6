@@ -14,7 +14,7 @@ Die Reihenfolge der Hüte bestimmt das Ergebnis. De Bono nennt das den **Sequenc
 | **entscheidung** (Default) | blau → weiss → gruen → gelb → schwarz → rot → blau | Fakten zuerst, dann Optionen erzeugen, dann ausgewogen Nutzen vs. Risiken, am Ende Bauchgefühl als Korrektiv, Blau synthetisiert. Robuster Allzweck-Ablauf für Entscheidungen. |
 | **bewertung** | blau → rot → weiss → gelb → schwarz → gruen → blau | Erst ungefiltertes Bauchgefühl zur bestehenden Sache, dann Fakten, dann Nutzen/Risiken; Grün spät, um konkrete Verbesserungen aus der Kritik abzuleiten. Für das Beurteilen eines vorliegenden Vorschlags. |
 | **ideenfindung** | blau → weiss → gruen → rot → gelb → schwarz → blau | Faktenbasis, dann breite Ideengenerierung, dann Intuition zur Auswahl der vielversprechenden, erst danach Nutzen/Risiken – Kritik kommt bewusst spät, um Kreativität nicht früh abzuwürgen. |
-| **schnell-review** | blau → weiss → schwarz → gelb → blau | Minimal-Ablauf: Fakten, Risiken, Nutzen, Synthese. Für schnelle Go/No-Go-Checks unter Zeitdruck. Schwarz immer mit Gelb gepaart. |
+| **schnell-review** | blau → weiss → gelb → schwarz → blau | Minimal-Ablauf: Fakten, dann Nutzen, dann Risiken (Gelb **vor** Schwarz, gern parallel), Synthese. Für schnelle Go/No-Go-Checks bei **geringem Risiko**; verzichtet bewusst auf Grün und Rot (kein kreatives und kein emotionales Korrektiv – daher nur für risikoarme Fälle). Schwarz bleibt mit Gelb gepaart, nie alleinige Stimme. |
 
 ## Auswahl-Heuristik
 - **Es gibt mehrere Optionen und wir müssen wählen** → `entscheidung`.
