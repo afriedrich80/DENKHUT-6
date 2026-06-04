@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "hut-output.schema.json",
+  "title": "Hut-Output-Envelope",
+  "description": "Standardisierter Ausgabe-Umschlag eines einzelnen Denkhuts (de Bono, Six Thinking Hats). Jeder Hut liefert eine Phase mit Zusammenfassung, typisierten Eintraegen, offenen Punkten und einer Konfidenz-Einschaetzung.",
+  "type": "object",
+  "properties": {
+    "hut": {
+      "type": "string",
+      "description": "Welcher Denkhut diese Ausgabe erzeugt hat.",
+      "enum": ["blau", "weiss", "rot", "schwarz", "gelb", "gruen"]
+    },
+    "phase_nr": {
+      "type": "integer",
+      "description": "Laufende Nummer der Phase innerhalb der Sequenz (1-basiert).",
+      "minimum": 1
+    },
+    "zusammenfassung": {
+      "type": "string",
+      "description": "Kurze, in Prosa formulierte Zusammenfassung des Beitrags dieses Huts."
+    },
+    "eintraege": {
+      "type": "array",
+      "description": "Die strukturierten Beitraege dieses Huts. Der Typ haengt vom Hut ab (Weiss=Fakt, Gruen=Idee, Gelb=Nutzenpunkt, Schwarz=Risiko, Rot=Emotion, Blau-Abschluss=Synthese).",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/Fakt" },
+          { "$ref": "#/$defs/Idee" },
+          { "$ref": "#/$defs/Emotion" },
+          { "$ref": "#/$defs/Nutzenpunkt" },
+          { "$ref": "#/$defs/Risiko" },
+          { "$ref": "#/$defs/Synthese" }
+        ]
+      }
+    },
+    "offene_punkte": {
+      "type": "array",
+      "description": "Noch ungeklaerte Fragen, fehlende Informationen oder Aufgaben, die aus dieser Phase folgen.",
+      "items": { "type": "string" }
+    },
+    "konfidenz": {
+      "type": "string",
+      "description": "Selbsteinschaetzung der Belastbarkeit dieser Phase.",
+      "enum": ["hoch", "mittel", "niedrig"]
+    }
+  },
+  "required": ["hut", "phase_nr", "zusammenfassung", "eintraege", "offene_punkte", "konfidenz"],
+  "additionalProperties": false,
+
+  "$defs": {
+    "Fakt": {
+      "title": "Fakt",
+      "description": "Weisser Hut: eine sachliche Aussage, Annahme oder identifizierte Wissensluecke.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Eindeutige ID, Konvention F1, F2, ...", "pattern": "^F[0-9]+$" },
+        "aussage": { "type": "string", "description": "Die sachliche Aussage." },
+        "typ": { "type": "string", "description": "Art der Aussage.", "enum": ["fakt", "annahme", "wissensluecke"] },
+        "quelle": { "type": "string", "description": "Herkunft der Information (Studie, internes Dokument, Schaetzung, ...)." },
+        "konfidenz": { "type": "string", "description": "Belastbarkeit der Aussage.", "enum": ["hoch", "mittel", "niedrig"] }
+      },
+      "required": ["id", "aussage", "typ", "quelle", "konfidenz"],
+      "additionalProperties": false
+    },
+    "Idee": {
+      "title": "Idee",
+      "description": "Gruener Hut: ein kreativer Loesungsvorschlag.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Eindeutige ID, Konvention I1, I2, ...", "pattern": "^I[0-9]+$" },
+        "titel": { "type": "string", "description": "Kurzer Titel der Idee." },
+        "beschreibung": { "type": "string", "description": "Ausfuehrliche Beschreibung der Idee." },
+        "typ": { "type": "string", "description": "Kreativitaetstyp der Idee.", "enum": ["neu", "variante", "kombination"] },
+        "basiert_auf": {
+          "type": "array",
+          "description": "IDs anderer Ideen, auf denen diese Idee aufbaut (bei Varianten/Kombinationen).",
+          "items": { "type": "string", "pattern": "^I[0-9]+$" }
+        }
+      },
+      "required": ["id", "titel", "beschreibung", "typ", "basiert_auf"],
+      "additionalProperties": false
+    },
+    "Emotion": {
+      "title": "Emotion",
+      "description": "Roter Hut: ein Gefuehl eines Stakeholders, ohne Begruendungspflicht.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Eindeutige ID, Konvention E1, E2, ...", "pattern": "^E[0-9]+$" },
+        "stakeholder": { "type": "string", "description": "Wer dieses Gefuehl hat." },
+        "gefuehl": { "type": "string", "description": "Das benannte Gefuehl (z.B. Hoffnung, Sorge, Begeisterung)." },
+        "intensitaet": { "type": "string", "description": "Staerke des Gefuehls.", "enum": ["stark", "mittel", "schwach"] },
+        "richtung": { "type": "string", "description": "Emotionale Tendenz.", "enum": ["positiv", "negativ", "gemischt"] },
+        "bezug": { "type": "string", "description": "Worauf sich das Gefuehl bezieht (Thema, Idee, Aspekt)." }
+      },
+      "required": ["id", "stakeholder", "gefuehl", "intensitaet", "richtung", "bezug"],
+      "additionalProperties": false
+    },
+    "Nutzenpunkt": {
+      "title": "Nutzenpunkt",
+      "description": "Gelber Hut: ein konkreter Vorteil oder Nutzen einer Idee.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Eindeutige ID, Konvention N1, N2, ...", "pattern": "^N[0-9]+$" },
+        "nutzen": { "type": "string", "description": "Der beschriebene Nutzen oder Vorteil." },
+        "bezug_idee": { "type": "string", "description": "ID der Idee, auf die sich der Nutzen bezieht.", "pattern": "^I[0-9]+$" },
+        "bedingung": { "type": "string", "description": "Voraussetzung, unter der der Nutzen eintritt." },
+        "wirkungshorizont": { "type": "string", "description": "Zeitlicher Horizont, in dem der Nutzen wirkt.", "enum": ["kurz", "mittel", "lang"] }
+      },
+      "required": ["id", "nutzen", "bezug_idee", "bedingung", "wirkungshorizont"],
+      "additionalProperties": false
+    },
+    "Risiko": {
+      "title": "Risiko",
+      "description": "Schwarzer Hut: ein Risiko, eine Schwaeche oder Gefahr einer Idee.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Eindeutige ID, Konvention R1, R2, ...", "pattern": "^R[0-9]+$" },
+        "risiko": { "type": "string", "description": "Beschreibung des Risikos." },
+        "bezug_idee": { "type": "string", "description": "ID der Idee, auf die sich das Risiko bezieht.", "pattern": "^I[0-9]+$" },
+        "ursache": { "type": "string", "description": "Warum das Risiko entsteht." },
+        "eintrittswahrscheinlichkeit": { "type": "string", "description": "Wie wahrscheinlich das Risiko eintritt.", "enum": ["hoch", "mittel", "niedrig"] },
+        "auswirkung": { "type": "string", "description": "Wie schwer die Folgen waeren.", "enum": ["hoch", "mittel", "niedrig"] },
+        "gegenmassnahme_moeglich": { "type": "boolean", "description": "Ob eine Gegenmassnahme grundsaetzlich moeglich ist." }
+      },
+      "required": ["id", "risiko", "bezug_idee", "ursache", "eintrittswahrscheinlichkeit", "auswirkung", "gegenmassnahme_moeglich"],
+      "additionalProperties": false
+    },
+    "Synthese": {
+      "title": "Synthese",
+      "description": "Blauer Hut (Abschluss): die zusammenfuehrende Entscheidungsvorlage ueber alle Huete.",
+      "type": "object",
+      "properties": {
+        "problemklaerung": { "type": "string", "description": "Praezisierte Problemstellung nach Durchlauf aller Huete." },
+        "fakten_kurz": { "type": "array", "description": "Verdichtete Faktenlage.", "items": { "type": "string" } },
+        "top_ideen": { "type": "array", "description": "Ausgewaehlte beste Ideen (Titel oder IDs).", "items": { "type": "string" } },
+        "pro": { "type": "array", "description": "Argumente fuer die Empfehlung.", "items": { "type": "string" } },
+        "contra": { "type": "array", "description": "Argumente gegen die Empfehlung.", "items": { "type": "string" } },
+        "emotionale_signale": { "type": "array", "description": "Verdichtete emotionale Lage der Stakeholder.", "items": { "type": "string" } },
+        "empfehlung": { "type": "string", "description": "Die abschliessende Handlungsempfehlung." },
+        "offene_risiken": { "type": "array", "description": "Risiken, die trotz Empfehlung bestehen bleiben.", "items": { "type": "string" } },
+        "naechste_schritte": { "type": "array", "description": "Konkrete naechste Schritte.", "items": { "type": "string" } },
+        "iteration_noetig": { "type": "boolean", "description": "Ob ein weiterer Denkdurchlauf noetig ist." }
+      },
+      "required": ["problemklaerung", "fakten_kurz", "top_ideen", "pro", "contra", "emotionale_signale", "empfehlung", "offene_risiken", "naechste_schritte", "iteration_noetig"],
+      "additionalProperties": false
+    }
+  }
+}

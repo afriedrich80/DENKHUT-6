@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sitzung.schema.json",
+  "title": "Denkhut-Sitzung",
+  "description": "Gesamtzustand einer DENKHUT-6-Sitzung nach de Bono: Problemdefinition, gewaehlte Sequenz der Huete, alle gesammelten Eintraege (Fakten, Ideen, Emotionen, Nutzen, Risiken), die Synthese und ein Audit-Protokoll. Die $defs der Eintrags-Typen entsprechen denen aus hut-output.schema.json und sind hier lokal gespiegelt, damit diese Datei eigenstaendig validierbar ist.",
+  "type": "object",
+  "properties": {
+    "sitzung_id": { "type": "string", "description": "Eindeutige ID der Sitzung." },
+    "titel": { "type": "string", "description": "Sprechender Titel der Sitzung." },
+    "erstellt_am": { "type": "string", "description": "Erstellungszeitpunkt im ISO-8601-Format.", "format": "date-time" },
+    "problem": {
+      "type": "object",
+      "description": "Die zu bearbeitende Problemstellung (vom blauen Hut eroeffnet).",
+      "properties": {
+        "beschreibung": { "type": "string", "description": "Worum geht es?" },
+        "ziel": { "type": "string", "description": "Was soll mit der Sitzung erreicht werden?" },
+        "scope": { "type": "string", "description": "Geltungsbereich und Abgrenzung." },
+        "constraints": { "type": "array", "description": "Rahmenbedingungen und Einschraenkungen.", "items": { "type": "string" } },
+        "stakeholder": { "type": "array", "description": "Beteiligte und Betroffene.", "items": { "type": "string" } },
+        "entscheidungskriterien": { "type": "array", "description": "Kriterien, an denen die Entscheidung gemessen wird.", "items": { "type": "string" } }
+      },
+      "required": ["beschreibung", "ziel", "scope", "constraints", "stakeholder", "entscheidungskriterien"],
+      "additionalProperties": false
+    },
+    "sequenz": {
+      "type": "array",
+      "description": "Reihenfolge der Huete in dieser Sitzung. Default-Sequenz 'entscheidung': blau, weiss, gruen, gelb, schwarz, rot, blau.",
+      "items": {
+        "type": "string",
+        "enum": ["blau", "weiss", "rot", "schwarz", "gelb", "gruen"]
+      },
+      "minItems": 1
+    },
+    "fakten": { "type": "array", "description": "Alle gesammelten Fakten (weisser Hut).", "items": { "$ref": "#/$defs/Fakt" } },
+    "ideen": { "type": "array", "description": "Alle gesammelten Ideen (gruener Hut).", "items": { "$ref": "#/$defs/Idee" } },
+    "emotionen": { "type": "array", "description": "Alle gesammelten Emotionen (roter Hut).", "items": { "$ref": "#/$defs/Emotion" } },
+    "nutzen": { "type": "array", "description": "Alle gesammelten Nutzenpunkte (gelber Hut).", "items": { "$ref": "#/$defs/Nutzenpunkt" } },
+    "risiken": { "type": "array", "description": "Alle gesammelten Risiken (schwarzer Hut).", "items": { "$ref": "#/$defs/Risiko" } },
+    "synthese": { "description": "Die abschliessende Synthese (blauer Hut).", "$ref": "#/$defs/Synthese" },
+    "protokoll": {
+      "type": "array",
+      "description": "Chronologisches Audit-Protokoll aller Schritte.",
+      "items": { "$ref": "#/$defs/Logeintrag" }
+    }
+  },
+  "required": ["sitzung_id", "titel", "erstellt_am", "problem", "sequenz", "fakten", "ideen", "emotionen", "nutzen", "risiken", "synthese", "protokoll"],
+  "additionalProperties": false,
+
+  "$defs": {
+    "Logeintrag": {
+      "title": "Logeintrag",
+      "description": "Ein Eintrag im Audit-Protokoll der Sitzung.",
+      "type": "object",
+      "properties": {
+        "schritt_nr": { "type": "integer", "description": "Laufende Schrittnummer (1-basiert).", "minimum": 1 },
+        "hut": { "type": "string", "description": "Welcher Hut in diesem Schritt aktiv war.", "enum": ["blau", "weiss", "rot", "schwarz", "gelb", "gruen"] },
+        "zeit": { "type": "string", "description": "Zeitpunkt des Schritts (ISO-8601)." },
+        "input_referenz": { "type": "string", "description": "Referenz auf den Input (Datei, Phase oder Eintrags-IDs)." },
+        "output_referenz": { "type": "string", "description": "Referenz auf den Output (Datei, Phase oder Eintrags-IDs)." }
+      },
+      "required": ["schritt_nr", "hut", "zeit", "input_referenz", "output_referenz"],
+      "additionalProperties": false
+    },
+    "Fakt": {
+      "title": "Fakt",
+      "description": "Weisser Hut: eine sachliche Aussage, Annahme oder Wissensluecke. Spiegel von hut-output.schema.json#/$defs/Fakt.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^F[0-9]+$", "description": "ID-Konvention F1, F2, ..." },
+        "aussage": { "type": "string", "description": "Die sachliche Aussage." },
+        "typ": { "type": "string", "enum": ["fakt", "annahme", "wissensluecke"], "description": "Art der Aussage." },
+        "quelle": { "type": "string", "description": "Herkunft der Information." },
+        "konfidenz": { "type": "string", "enum": ["hoch", "mittel", "niedrig"], "description": "Belastbarkeit." }
+      },
+      "required": ["id", "aussage", "typ", "quelle", "konfidenz"],
+      "additionalProperties": false
+    },
+    "Idee": {
+      "title": "Idee",
+      "description": "Gruener Hut: ein Loesungsvorschlag. Spiegel von hut-output.schema.json#/$defs/Idee.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^I[0-9]+$", "description": "ID-Konvention I1, I2, ..." },
+        "titel": { "type": "string", "description": "Kurzer Titel." },
+        "beschreibung": { "type": "string", "description": "Ausfuehrliche Beschreibung." },
+        "typ": { "type": "string", "enum": ["neu", "variante", "kombination"], "description": "Kreativitaetstyp." },
+        "basiert_auf": { "type": "array", "items": { "type": "string", "pattern": "^I[0-9]+$" }, "description": "IDs der zugrunde liegenden Ideen." }
+      },
+      "required": ["id", "titel", "beschreibung", "typ", "basiert_auf"],
+      "additionalProperties": false
+    },
+    "Emotion": {
+      "title": "Emotion",
+      "description": "Roter Hut: ein Gefuehl eines Stakeholders. Spiegel von hut-output.schema.json#/$defs/Emotion.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^E[0-9]+$", "description": "ID-Konvention E1, E2, ..." },
+        "stakeholder": { "type": "string", "description": "Wer das Gefuehl hat." },
+        "gefuehl": { "type": "string", "description": "Das benannte Gefuehl." },
+        "intensitaet": { "type": "string", "enum": ["stark", "mittel", "schwach"], "description": "Staerke." },
+        "richtung": { "type": "string", "enum": ["positiv", "negativ", "gemischt"], "description": "Tendenz." },
+        "bezug": { "type": "string", "description": "Worauf sich das Gefuehl bezieht." }
+      },
+      "required": ["id", "stakeholder", "gefuehl", "intensitaet", "richtung", "bezug"],
+      "additionalProperties": false
+    },
+    "Nutzenpunkt": {
+      "title": "Nutzenpunkt",
+      "description": "Gelber Hut: ein Vorteil einer Idee. Spiegel von hut-output.schema.json#/$defs/Nutzenpunkt.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^N[0-9]+$", "description": "ID-Konvention N1, N2, ..." },
+        "nutzen": { "type": "string", "description": "Der Nutzen." },
+        "bezug_idee": { "type": "string", "pattern": "^I[0-9]+$", "description": "ID der bezogenen Idee." },
+        "bedingung": { "type": "string", "description": "Voraussetzung fuer den Nutzen." },
+        "wirkungshorizont": { "type": "string", "enum": ["kurz", "mittel", "lang"], "description": "Zeithorizont." }
+      },
+      "required": ["id", "nutzen", "bezug_idee", "bedingung", "wirkungshorizont"],
+      "additionalProperties": false
+    },
+    "Risiko": {
+      "title": "Risiko",
+      "description": "Schwarzer Hut: ein Risiko einer Idee. Spiegel von hut-output.schema.json#/$defs/Risiko.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "pattern": "^R[0-9]+$", "description": "ID-Konvention R1, R2, ..." },
+        "risiko": { "type": "string", "description": "Beschreibung des Risikos." },
+        "bezug_idee": { "type": "string", "pattern": "^I[0-9]+$", "description": "ID der bezogenen Idee." },
+        "ursache": { "type": "string", "description": "Ursache des Risikos." },
+        "eintrittswahrscheinlichkeit": { "type": "string", "enum": ["hoch", "mittel", "niedrig"], "description": "Eintrittswahrscheinlichkeit." },
+        "auswirkung": { "type": "string", "enum": ["hoch", "mittel", "niedrig"], "description": "Schwere der Folgen." },
+        "gegenmassnahme_moeglich": { "type": "boolean", "description": "Ob eine Gegenmassnahme moeglich ist." }
+      },
+      "required": ["id", "risiko", "bezug_idee", "ursache", "eintrittswahrscheinlichkeit", "auswirkung", "gegenmassnahme_moeglich"],
+      "additionalProperties": false
+    },
+    "Synthese": {
+      "title": "Synthese",
+      "description": "Blauer Hut (Abschluss): die Entscheidungsvorlage. Spiegel von hut-output.schema.json#/$defs/Synthese.",
+      "type": "object",
+      "properties": {
+        "problemklaerung": { "type": "string", "description": "Praezisierte Problemstellung." },
+        "fakten_kurz": { "type": "array", "items": { "type": "string" }, "description": "Verdichtete Faktenlage." },
+        "top_ideen": { "type": "array", "items": { "type": "string" }, "description": "Beste Ideen." },
+        "pro": { "type": "array", "items": { "type": "string" }, "description": "Argumente dafuer." },
+        "contra": { "type": "array", "items": { "type": "string" }, "description": "Argumente dagegen." },
+        "emotionale_signale": { "type": "array", "items": { "type": "string" }, "description": "Emotionale Lage." },
+        "empfehlung": { "type": "string", "description": "Handlungsempfehlung." },
+        "offene_risiken": { "type": "array", "items": { "type": "string" }, "description": "Verbleibende Risiken." },
+        "naechste_schritte": { "type": "array", "items": { "type": "string" }, "description": "Naechste Schritte." },
+        "iteration_noetig": { "type": "boolean", "description": "Ob ein weiterer Durchlauf noetig ist." }
+      },
+      "required": ["problemklaerung", "fakten_kurz", "top_ideen", "pro", "contra", "emotionale_signale", "empfehlung", "offene_risiken", "naechste_schritte", "iteration_noetig"],
+      "additionalProperties": false
+    }
+  }
+}
