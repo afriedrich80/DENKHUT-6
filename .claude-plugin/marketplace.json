@@ -1,0 +1,18 @@
+{
+  "name": "denkhut-6",
+  "description": "Marketplace für DENKHUT-6 – De Bonos sechs Denkhüte als Claude-Code-Multiagentensystem.",
+  "owner": {
+    "name": "afriedrich80",
+    "email": "afriedrich80@googlemail.com"
+  },
+  "plugins": [
+    {
+      "name": "denkhut-6",
+      "source": "./",
+      "description": "De Bonos 6 Denkhüte als Multiagentensystem: sechs Hut-Subagents + Blauer-Hut-Orchestrator für strukturierte Entscheidungen.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "keywords": ["six-thinking-hats", "de-bono", "denkhuete", "multi-agent", "decision-making"]
+    }
+  ]
+}

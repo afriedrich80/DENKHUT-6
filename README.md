@@ -46,19 +46,41 @@ flowchart LR
 
 ## Installation
 
-DENKHUT-6 ist ein **Claude-Code-Plugin**:
-
-1. Den Ordner `denkhut-6/` in dein Plugin- bzw. Projektverzeichnis legen (z. B. `~/.claude/plugins/denkhut-6/` oder als Projekt-Plugin).
-2. Claude Code erkennt die Subagents automatisch aus `agents/`, die Skills aus `skills/` und den Slash-Command aus `commands/`.
-3. Keine weitere Konfiguration nötig – das Manifest liegt in `.claude-plugin/plugin.json`.
-
-### Schnellstart
+DENKHUT-6 wird als **Claude-Code-Plugin direkt aus GitHub** installiert – zwei Befehle, kein manuelles Kopieren. In Claude Code eingeben:
 
 ```
-/denkhut-6 <Thema>
+/plugin marketplace add afriedrich80/DENKHUT-6
+/plugin install denkhut-6@denkhut-6
 ```
 
-Beispiel: `/denkhut-6 Sollen wir auf die 4-Tage-Woche umstellen?`
+Danach `/reload-plugins` ausführen oder Claude Code neu starten. Spätere Updates: `/plugin marketplace update denkhut-6`.
+
+> Voraussetzung: eine aktuelle Claude-Code-Version (der `/plugin`-Befehl muss verfügbar sein).
+
+### Nutzung
+
+Nach der Installation sind Orchestrator-Skill und die sechs Hut-Subagents aktiv. Eine Sitzung startest du auf zwei Wegen:
+
+- **Per Slash-Command** (Plugin-Skills sind namespaced mit `denkhut-6:`):
+
+  ```
+  /denkhut-6:denkhut <Thema>
+  ```
+
+  Beispiel: `/denkhut-6:denkhut Sollen wir auf die 4-Tage-Woche umstellen?`
+
+- **Per natürlicher Sprache** – Claude ruft den Orchestrator automatisch auf:
+  „Analysiere mit den sechs Denkhüten, ob wir auf die 4-Tage-Woche umstellen sollten."
+
+### Alternative: lokal ohne Marketplace
+
+Zum Entwickeln/Testen ohne Installation:
+
+```
+claude --plugin-dir ./denkhut-6
+```
+
+Oder die Inhalte von `agents/`, `skills/` und `commands/` nach `~/.claude/` (global) bzw. `<projekt>/.claude/` (projektweit) kopieren – dann laufen die Skills **ohne** Namespace, der Command lautet schlicht `/denkhut`.
 
 ## Wie es funktioniert
 

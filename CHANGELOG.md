@@ -20,5 +20,6 @@ und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 - Vollständige Beispielsitzung in `beispiel/4-tage-woche/`.
 - Dokumentation: `README.md`, `METHODIK.md`, `DATENMODELL.md`, `HANDBUCH.md`, `CONVENTIONS.md`, `CLAUDE.md`.
 - Plugin-Manifest, MIT-Lizenz und `.gitignore`.
+- Marketplace-Manifest `.claude-plugin/marketplace.json` für die Ein-Befehl-Installation aus GitHub (`/plugin marketplace add afriedrich80/DENKHUT-6` → `/plugin install denkhut-6@denkhut-6`).
 
-[0.1.0]: https://example.com/denkhut-6/releases/tag/v0.1.0
+[0.1.0]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.0

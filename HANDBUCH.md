@@ -17,14 +17,25 @@
 
 ## 1. Installation Schritt für Schritt
 
-1. **Plugin platzieren.** Lege den Ordner `denkhut-6/` an einen Ort, den Claude Code als Plugin liest – z. B. `~/.claude/plugins/denkhut-6/` (global) oder in dein Projekt als Projekt-Plugin.
-2. **Manifest prüfen.** In `denkhut-6/.claude-plugin/plugin.json` steht das Plugin-Manifest. Es muss gültiges JSON sein (Name `denkhut-6`, Version `0.1.0`).
-3. **Erkennung.** Claude Code lädt automatisch:
-   - die Subagents aus `agents/` (sechs Hüte),
-   - die Skills aus `skills/` (`denkhut-6`, `denkhut-sequenz`, `denkhut-protokoll`),
-   - den Slash-Command aus `commands/denkhut.md` → `/denkhut-6`.
-4. **Sitzungsordner.** Beim ersten Lauf entsteht `denkhut-sitzungen/` im Arbeitsverzeichnis. Dieser Ordner ist in `.gitignore` ausgeschlossen.
-5. **Test.** Rufe `/denkhut-6 Test-Thema` auf. Der Blaue Hut sollte mit der Problemklärung antworten.
+**Empfohlen: Installation aus GitHub (zwei Befehle).** In Claude Code eingeben:
+
+```
+/plugin marketplace add afriedrich80/DENKHUT-6
+/plugin install denkhut-6@denkhut-6
+```
+
+Anschließend `/reload-plugins` oder Claude Code neu starten. Spätere Updates: `/plugin marketplace update denkhut-6`.
+
+Claude Code lädt damit automatisch:
+- die Subagents aus `agents/` (sechs Hüte),
+- die Skills aus `skills/` (`denkhut-6`, `denkhut-sequenz`, `denkhut-protokoll`),
+- den Slash-Command aus `commands/denkhut.md` → `/denkhut-6:denkhut`.
+
+> Plugin-Skills sind **namespaced** mit `denkhut-6:`. Der Aufruf lautet daher `/denkhut-6:denkhut <Thema>` (nicht `/denkhut-6`). Alternativ triggert Claude den Orchestrator per natürlicher Sprache automatisch.
+
+**Test.** Rufe `/denkhut-6:denkhut Test-Thema` auf. Der Blaue Hut sollte mit der Problemklärung antworten. Beim ersten Lauf entsteht `denkhut-sitzungen/` im Arbeitsverzeichnis (in `.gitignore` ausgeschlossen).
+
+**Alternative ohne Marketplace.** Zum Testen: `claude --plugin-dir ./denkhut-6`. Oder die Ordner `agents/`, `skills/`, `commands/` nach `~/.claude/` bzw. `<projekt>/.claude/` kopieren – dann ohne Namespace als `/denkhut`.
 
 ---
 
@@ -33,7 +44,7 @@
 ### Aufruf
 
 ```
-/denkhut-6 Sollen wir auf die 4-Tage-Woche umstellen?
+/denkhut-6:denkhut Sollen wir auf die 4-Tage-Woche umstellen?
 ```
 
 ### Was dann passiert
@@ -50,7 +61,7 @@ Jeder Schritt wird in `denkhut-sitzungen/<slug>/` als eigene Datei abgelegt und 
 ### Beispieldialog (gekürzt)
 
 ```
-Du:  /denkhut-6 Sollen wir auf die 4-Tage-Woche umstellen?
+Du:  /denkhut-6:denkhut Sollen wir auf die 4-Tage-Woche umstellen?
 
 🔵 Blau: Ich fasse das Problem: Soll Firma X die Regelarbeitszeit von 5 auf
          4 Tage senken? Ziel: Produktivität und Zufriedenheit halten oder
@@ -166,7 +177,7 @@ A: Nein. Einzelne Hüte (Abschnitt 4) oder kurze Sequenzen (`schnell-review`) si
 
 | Symptom | Ursache | Abhilfe |
 |---------|---------|---------|
-| `/denkhut-6` wird nicht erkannt | Plugin nicht im Plugin-Verzeichnis oder `plugin.json` ungültig | Pfad prüfen, JSON validieren, Claude Code neu laden |
+| `/denkhut-6:denkhut` wird nicht erkannt | Plugin nicht installiert oder nicht geladen | `/plugin install denkhut-6@denkhut-6`, dann `/reload-plugins`; Claude-Code-Version aktualisieren |
 | Hut antwortet im falschen Modus (z. B. Weiß wertet) | Vor-Kontext zu breit mitgegeben | Blauer Hut soll nur den relevanten Kontext reichen (siehe DATENMODELL §Kontextflüsse) |
 | Schwarz dominiert die Synthese | Schwarz-Übergewicht | Gelb gleich gewichten; Schwarz auf begründete Risiken begrenzen |
 | Keine Dateien in `denkhut-sitzungen/` | Schreibrechte oder `.gitignore`-Verwirrung | Arbeitsverzeichnis und Rechte prüfen; `.gitignore` schließt nur das Committen aus, nicht das Schreiben |
