@@ -17,10 +17,13 @@
 
 ## 1. Installation Schritt für Schritt
 
-**Empfohlen: Installation aus GitHub (zwei Befehle).** In Claude Code eingeben:
+**Empfohlen: Installation aus GitHub (zwei getrennte Befehle).** Nacheinander in Claude Code eingeben – ersten Befehl, Enter, kurz warten, dann den zweiten. **Nicht** beide in dieselbe Zeile, kein `→`/`…`:
 
 ```
 /plugin marketplace add https://github.com/afriedrich80/DENKHUT-6.git
+```
+
+```
 /plugin install denkhut-6@denkhut-6
 ```
 

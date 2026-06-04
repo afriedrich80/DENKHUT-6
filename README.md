@@ -61,10 +61,13 @@ flowchart LR
 
 ### Weg 1 — direkt aus GitHub (empfohlen, **kein GitHub-Account nötig**)
 
-Das Repo ist öffentlich; der Zugriff läuft **anonym über HTTPS** – ohne Account, ohne Login, ohne SSH-Key. Zwei Befehle in Claude Code:
+Das Repo ist öffentlich; der Zugriff läuft **anonym über HTTPS** – ohne Account, ohne Login, ohne SSH-Key. **Zwei getrennte Befehle** in Claude Code – ersten eingeben, Enter, kurz warten, dann den zweiten (nicht zusammen in eine Zeile):
 
 ```
 /plugin marketplace add https://github.com/afriedrich80/DENKHUT-6.git
+```
+
+```
 /plugin install denkhut-6@denkhut-6
 ```
 
