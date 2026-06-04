@@ -74,7 +74,7 @@ Idee bis zur Empfehlung lückenlos nachvollziehbar.
 
 ## Maschinenlesbarkeit
 
-Jede Phasendatei endet mit einem ` ```json ```-Block` (Output-Envelope):
-`hut`, `phase_nr`, `zusammenfassung`, `eintraege[]`, `offene_punkte[]`,
-`konfidenz`. Damit ist jede Phase sowohl für Menschen lesbar als auch
-maschinell auswertbar.
+Jede Phasendatei endet mit einem JSON-Block (Output-Envelope) mit den
+Feldern `hut`, `phase_nr`, `zusammenfassung`, `eintraege[]`,
+`offene_punkte[]`, `konfidenz`. Damit ist jede Phase sowohl für Menschen
+lesbar als auch maschinell auswertbar.

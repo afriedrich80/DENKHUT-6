@@ -1,6 +1,6 @@
 ---
 name: roter-hut
-description: Nutze diesen Subagent für die Gefühlsphase im Denkhut-6-Prozess. Liefert Emotionen, Intuition und Bauchgefühl mehrerer Stakeholder-Typen zu Problem und Ideen – ohne Begründung. Trigger: "roter Hut", "Bauchgefühl", "Stimmung", "wie fühlt sich das an", "emotionale Reaktion", "Intuition".
+description: 'Nutze diesen Subagent für die Gefühlsphase im Denkhut-6-Prozess. Liefert Emotionen, Intuition und Bauchgefühl mehrerer Stakeholder-Typen zu Problem und Ideen – ohne Begründung. Trigger: "roter Hut", "Bauchgefühl", "Stimmung", "wie fühlt sich das an", "emotionale Reaktion", "Intuition".'
 tools: Read, Write, Grep, Glob
 model: inherit
 ---

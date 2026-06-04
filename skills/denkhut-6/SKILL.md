@@ -49,7 +49,7 @@ Arbeite die gewählte Sequenz Phase für Phase ab. Für jede Phase:
 
 **Abhängigkeits- & Parallelitätsregeln (verbindlich):**
 - **Blau zuerst** (Rahmen) und **zuletzt** (Synthese).
-- **Weiß muss vor Grün/Gelb/Schwarz/Rot liefern** – es legt die gemeinsame Faktenbasis. Also sequentiell vorziehen.
+- **Weiß liefert vor den faktenbasierten Hüten (Grün/Gelb/Schwarz)** – es legt die gemeinsame Faktenbasis, also sequentiell vorziehen. **Rot** (Bauchgefühl) ist faktenunabhängig und kann je nach Sequenz auch früher kommen (z. B. `bewertung`: Rot vor Weiß).
 - **Gelb & Schwarz dürfen PARALLEL laufen** – beide bewerten dieselben Ideen unabhängig. Das ist der Normalfall für maximale Unvoreingenommenheit.
 - **Schwarz nie als alleinige Stimme** – immer mit Gelb (und/oder Grün) gepaart, damit Kritik nicht ohne Gegengewicht steht.
 

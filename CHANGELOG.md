@@ -5,7 +5,16 @@ Alle nennenswerten Änderungen an DENKHUT-6 werden in dieser Datei dokumentiert.
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
 und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 
-## [Unreleased]
+## [0.1.1] – 2026-06-04 – Korrekturen & Klarstellungen
+
+### Fixed
+
+- **YAML-Frontmatter aller sechs Hut-Subagents repariert.** Unquotete `description:`-Werte mit `Trigger: "…"` brachen die YAML-Parse; die Agenten luden zur Laufzeit mit leeren Metadaten. Beschreibungen jetzt korrekt in Quotes (`claude plugin validate --strict` ist grün).
+- **ID-Konvention in den Agent-Mini-Beispielen** von `G1/G2/G3` auf schema-konforme `I1/I2/I3` (`^I[0-9]+$`) korrigiert (Grün, Gelb, Schwarz, Blau).
+- **Schema deckt den Blauen Hut jetzt ab:** `hut-output.schema.json` erhält optionale Felder `problem`+`sequenz` (Eröffnung) und `synthese` (Abschluss) sowie ein `Problem`-`$def`; die Beispiel-JSONs validieren damit gegen das Envelope-Schema.
+- **`iteration_begruendung`** (aus `templates/entscheidungsvorlage.md`) ins Synthese-Schema aufgenommen (beide Schemas).
+- **Command-Notation vereinheitlicht:** als Plugin `/denkhut-6:denkhut` (namespaced), lokal ohne Plugin `/denkhut` – in README, HANDBUCH, CLAUDE.md korrigiert.
+- **Sequenzregel präzisiert:** Weiß steht vor den faktenbasierten Hüten (Grün/Gelb/Schwarz); Rot darf je nach Sequenz früher stehen (z. B. `bewertung`). Vorher widersprüchlich formuliert.
 
 ### Added
 
@@ -20,7 +29,7 @@ und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 - Sechs Hut-Subagents in `agents/`: `weisser-hut`, `roter-hut`, `schwarzer-hut`, `gelber-hut`, `gruener-hut`, `blauer-hut`.
 - Blauer-Hut-Orchestrator, der die Hüte über das Agent-Tool steuert (isolierte Kontexte, parallele Hüte).
 - Skills in `skills/`: `denkhut-6` (Orchestrator), `denkhut-sequenz`, `denkhut-protokoll`.
-- Slash-Command `/denkhut-6` (`commands/denkhut.md`).
+- Slash-Command `/denkhut-6:denkhut` (`commands/denkhut.md`).
 - Vier Sequenzen: `entscheidung` (Default), `bewertung`, `ideenfindung`, `schnell-review`.
 - Datenmodell mit Output-Envelope und typisierten Einträgen (Fakt, Idee, Emotion, Nutzenpunkt, Risiko, Synthese, Logeintrag); JSON-Schemas in `schemas/`.
 - Output-Vorlagen in `templates/` und Ausgabekonvention `denkhut-sitzungen/<slug>/`.
@@ -29,4 +38,5 @@ und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 - Plugin-Manifest, MIT-Lizenz und `.gitignore`.
 - Marketplace-Manifest `.claude-plugin/marketplace.json` für die Ein-Befehl-Installation aus GitHub (`/plugin marketplace add afriedrich80/DENKHUT-6` → `/plugin install denkhut-6@denkhut-6`).
 
+[0.1.1]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.1
 [0.1.0]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.0

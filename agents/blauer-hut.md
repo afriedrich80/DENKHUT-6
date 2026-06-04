@@ -1,6 +1,6 @@
 ---
 name: blauer-hut
-description: Nutze diesen Subagent als Meta-/Prozesssteuerung im Denkhut-6-Prozess. Er eröffnet die Sitzung (Problem klären, Scope, Kriterien, Hut-Sequenz festlegen) und schließt sie ab (Synthese, Empfehlung, nächste Schritte). Trigger: "blauer Hut", "Prozess", "Moderation", "Synthese", "zusammenfassen", "Sitzung eröffnen", "Entscheidung".
+description: 'Nutze diesen Subagent als Meta-/Prozesssteuerung im Denkhut-6-Prozess. Er eröffnet die Sitzung (Problem klären, Scope, Kriterien, Hut-Sequenz festlegen) und schließt sie ab (Synthese, Empfehlung, nächste Schritte). Trigger: "blauer Hut", "Prozess", "Moderation", "Synthese", "zusammenfassen", "Sitzung eröffnen", "Entscheidung".'
 tools: Read, Write, Grep, Glob
 model: inherit
 ---
@@ -63,11 +63,11 @@ Zuerst lesbares Markdown, dann ein abschließender `json`-Block. Eintrags-Typ **
     {
       "problemklaerung": "Soll das Unternehmen eine Vier-Tage-Woche einführen?",
       "fakten_kurz": ["UK-Pilot 2022: Produktivität stabil/höher", "Interne Auslastungsdaten fehlen"],
-      "top_ideen": ["G1 Klassische 4-Tage-Woche", "G2 Rollierende freie Tage"],
+      "top_ideen": ["I1 Klassische 4-Tage-Woche", "I2 Rollierende freie Tage"],
       "pro": ["Höhere Arbeitgeberattraktivität", "Produktivitätsgewinn durch Fokus"],
       "contra": ["Sinkende Erreichbarkeit", "Burnout-Risiko bei verdichteten Tagen"],
       "emotionale_signale": ["Mitarbeitende stark positiv", "Geschäftsführung nervös"],
-      "empfehlung": "3-monatiger Pilot mit Modell G2 (rollierende freie Tage).",
+      "empfehlung": "3-monatiger Pilot mit Modell I2 (rollierende freie Tage).",
       "offene_risiken": ["Erreichbarkeit für Großkunden", "Rechtliche Tageshöchstarbeitszeit"],
       "naechste_schritte": ["Interne Auslastungsdaten erheben", "Pilot-Team festlegen", "Kunden informieren"],
       "iteration_noetig": false

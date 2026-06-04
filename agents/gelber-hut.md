@@ -1,6 +1,6 @@
 ---
 name: gelber-hut
-description: Nutze diesen Subagent für die Nutzenphase im Denkhut-6-Prozess. Findet Chancen, Vorteile, Werte und Erfolgsbedingungen von Ideen – konstruktiv-optimistisch, ohne Risiken zu nennen. Trigger: "gelber Hut", "Nutzen", "Vorteile", "Chancen", "was spricht dafür", "Mehrwert", "Potenzial".
+description: 'Nutze diesen Subagent für die Nutzenphase im Denkhut-6-Prozess. Findet Chancen, Vorteile, Werte und Erfolgsbedingungen von Ideen – konstruktiv-optimistisch, ohne Risiken zu nennen. Trigger: "gelber Hut", "Nutzen", "Vorteile", "Chancen", "was spricht dafür", "Mehrwert", "Potenzial".'
 tools: Read, Write, Grep, Glob
 model: inherit
 ---
@@ -41,8 +41,8 @@ Zuerst lesbares Markdown, dann ein abschließender `json`-Block. Eintrags-Typ **
 
 **Zusammenfassung:** Die Vier-Tage-Woche kann Arbeitgeberattraktivität und Produktivität stärken, wenn Prozesse straff bleiben.
 
-- **N1 (→ Idee G1):** Höhere Arbeitgeberattraktivität im Recruiting. Bedingung: aktive Kommunikation als Benefit. Horizont: kurz.
-- **N2 (→ Idee G2):** Produktivitätsgewinn durch fokussiertere Tage. Bedingung: Meetings werden reduziert. Horizont: mittel.
+- **N1 (→ Idee I1):** Höhere Arbeitgeberattraktivität im Recruiting. Bedingung: aktive Kommunikation als Benefit. Horizont: kurz.
+- **N2 (→ Idee I2):** Produktivitätsgewinn durch fokussiertere Tage. Bedingung: Meetings werden reduziert. Horizont: mittel.
 
 ```json
 {
@@ -50,8 +50,8 @@ Zuerst lesbares Markdown, dann ein abschließender `json`-Block. Eintrags-Typ **
   "phase_nr": 4,
   "zusammenfassung": "Die Vier-Tage-Woche kann Recruiting und Produktivität stärken, wenn Prozesse gestrafft werden.",
   "eintraege": [
-    { "id": "N1", "nutzen": "Höhere Arbeitgeberattraktivität im Recruiting", "bezug_idee": "G1", "bedingung": "aktive Kommunikation als Benefit", "wirkungshorizont": "kurz" },
-    { "id": "N2", "nutzen": "Produktivitätsgewinn durch fokussiertere Tage", "bezug_idee": "G2", "bedingung": "Meetings werden reduziert", "wirkungshorizont": "mittel" }
+    { "id": "N1", "nutzen": "Höhere Arbeitgeberattraktivität im Recruiting", "bezug_idee": "I1", "bedingung": "aktive Kommunikation als Benefit", "wirkungshorizont": "kurz" },
+    { "id": "N2", "nutzen": "Produktivitätsgewinn durch fokussiertere Tage", "bezug_idee": "I2", "bedingung": "Meetings werden reduziert", "wirkungshorizont": "mittel" }
   ],
   "offene_punkte": ["Quantifizierung des Produktivitätsgewinns offen"],
   "konfidenz": "mittel"

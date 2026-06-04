@@ -117,7 +117,7 @@ denkhut-6/
 │   ├── denkhut-sequenz/     # Sequenz-Logik
 │   └── denkhut-protokoll/   # Protokollierung
 ├── commands/
-│   └── denkhut.md           # Slash-Command /denkhut-6
+│   └── denkhut.md           # Slash-Command /denkhut-6:denkhut
 ├── schemas/                 # JSON-Schemas der Datenstrukturen
 ├── templates/               # Output-Vorlagen
 ├── beispiel/

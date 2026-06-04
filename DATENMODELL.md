@@ -150,7 +150,7 @@ Der Blaue Hut gibt jedem Hut nur den jeweils **relevanten** Vor-Kontext. So blei
 | `ideenfindung` | blau → weiss → gruen → rot → gelb → schwarz → blau | neue Lösungen suchen |
 | `schnell-review` | blau → weiss → schwarz → gelb → blau | schnelle Plausibilitätsprüfung |
 
-**Parallelität:** Weiß steht vor Grün/Gelb/Schwarz/Rot. Gelb und Schwarz laufen parallel. Blau steht immer zuerst und zuletzt.
+**Reihenfolge-Regeln:** Weiß steht vor den **faktenbasierten Analyse-Hüten** (Grün/Gelb/Schwarz), damit diese auf einer gemeinsamen Faktenbasis arbeiten. **Rot** (Bauchgefühl) ist faktenunabhängig und darf je nach Sequenz **früher** stehen – z. B. in `bewertung`, wo bewusst zuerst eine spontane emotionale Resonanz gesammelt wird. Gelb und Schwarz laufen **parallel**. Blau steht immer **zuerst und zuletzt**.
 
 ## Ausgabe-Ordnerkonvention
 

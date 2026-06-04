@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "hut-output.schema.json",
   "title": "Hut-Output-Envelope",
-  "description": "Standardisierter Ausgabe-Umschlag eines einzelnen Denkhuts (de Bono, Six Thinking Hats). Jeder Hut liefert eine Phase mit Zusammenfassung, typisierten Eintraegen, offenen Punkten und einer Konfidenz-Einschaetzung.",
+  "description": "Standardisierter Ausgabe-Umschlag eines einzelnen Denkhuts (de Bono, Six Thinking Hats). Jeder Hut liefert eine Phase mit Zusammenfassung, typisierten Eintraegen, offenen Punkten und einer Konfidenz-Einschaetzung. Der Blaue Hut nutzt zusaetzlich die optionalen Felder 'problem'+'sequenz' (Eroeffnung) bzw. 'synthese' (Abschluss).",
   "type": "object",
   "properties": {
     "hut": {
@@ -42,12 +42,41 @@
       "type": "string",
       "description": "Selbsteinschaetzung der Belastbarkeit dieser Phase.",
       "enum": ["hoch", "mittel", "niedrig"]
+    },
+    "problem": {
+      "description": "Nur Blauer Hut (Eroeffnung): die geklaerte Problemstellung. Bei allen anderen Hueten weggelassen.",
+      "$ref": "#/$defs/Problem"
+    },
+    "sequenz": {
+      "type": "array",
+      "description": "Nur Blauer Hut (Eroeffnung): die festgelegte Reihenfolge der Huete fuer diese Sitzung.",
+      "items": { "type": "string", "enum": ["blau", "weiss", "rot", "schwarz", "gelb", "gruen"] },
+      "minItems": 1
+    },
+    "synthese": {
+      "description": "Nur Blauer Hut (Abschluss): die zusammenfuehrende Entscheidungsvorlage ueber alle Huete.",
+      "$ref": "#/$defs/Synthese"
     }
   },
   "required": ["hut", "phase_nr", "zusammenfassung", "eintraege", "offene_punkte", "konfidenz"],
   "additionalProperties": false,
 
   "$defs": {
+    "Problem": {
+      "title": "Problem",
+      "description": "Blauer Hut (Eroeffnung): die zu bearbeitende Problemstellung. Spiegel von sitzung.schema.json#/properties/problem.",
+      "type": "object",
+      "properties": {
+        "beschreibung": { "type": "string", "description": "Worum geht es?" },
+        "ziel": { "type": "string", "description": "Was soll erreicht werden?" },
+        "scope": { "type": "string", "description": "Geltungsbereich und Abgrenzung." },
+        "constraints": { "type": "array", "items": { "type": "string" }, "description": "Rahmenbedingungen und Einschraenkungen." },
+        "stakeholder": { "type": "array", "items": { "type": "string" }, "description": "Beteiligte und Betroffene." },
+        "entscheidungskriterien": { "type": "array", "items": { "type": "string" }, "description": "Kriterien, an denen die Entscheidung gemessen wird." }
+      },
+      "required": ["beschreibung", "ziel", "scope", "constraints", "stakeholder", "entscheidungskriterien"],
+      "additionalProperties": false
+    },
     "Fakt": {
       "title": "Fakt",
       "description": "Weisser Hut: eine sachliche Aussage, Annahme oder identifizierte Wissensluecke.",
@@ -139,7 +168,8 @@
         "empfehlung": { "type": "string", "description": "Die abschliessende Handlungsempfehlung." },
         "offene_risiken": { "type": "array", "description": "Risiken, die trotz Empfehlung bestehen bleiben.", "items": { "type": "string" } },
         "naechste_schritte": { "type": "array", "description": "Konkrete naechste Schritte.", "items": { "type": "string" } },
-        "iteration_noetig": { "type": "boolean", "description": "Ob ein weiterer Denkdurchlauf noetig ist." }
+        "iteration_noetig": { "type": "boolean", "description": "Ob ein weiterer Denkdurchlauf noetig ist." },
+        "iteration_begruendung": { "type": "string", "description": "Optionale Begruendung, warum (k)eine weitere Iteration noetig ist." }
       },
       "required": ["problemklaerung", "fakten_kurz", "top_ideen", "pro", "contra", "emotionale_signale", "empfehlung", "offene_risiken", "naechste_schritte", "iteration_noetig"],
       "additionalProperties": false

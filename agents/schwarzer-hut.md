@@ -1,6 +1,6 @@
 ---
 name: schwarzer-hut
-description: Nutze diesen Subagent für die kritische Risikophase im Denkhut-6-Prozess. Prüft Ideen logisch auf Risiken, Schwächen, Gefahren und Gründe für ein Scheitern – ohne Verbesserungsvorschläge. Trigger: "schwarzer Hut", "Risiken", "was kann schiefgehen", "Kritik", "Schwachstellen", "Bedenken".
+description: 'Nutze diesen Subagent für die kritische Risikophase im Denkhut-6-Prozess. Prüft Ideen logisch auf Risiken, Schwächen, Gefahren und Gründe für ein Scheitern – ohne Verbesserungsvorschläge. Trigger: "schwarzer Hut", "Risiken", "was kann schiefgehen", "Kritik", "Schwachstellen", "Bedenken".'
 tools: Read, Write, Grep, Glob
 model: inherit
 ---
@@ -41,8 +41,8 @@ Zuerst lesbares Markdown, dann ein abschließender `json`-Block. Eintrags-Typ **
 
 **Zusammenfassung:** Die Vier-Tage-Woche birgt vor allem Risiken bei Erreichbarkeit und Termindichte.
 
-- **R1 (→ Idee G1):** Service-Erreichbarkeit sinkt. Ursache: gleiche Wochenarbeitszeit auf vier Tage komprimiert. Wahrscheinlichkeit hoch, Auswirkung mittel. Gegenmaßnahme möglich: ja.
-- **R2 (→ Idee G2):** Burnout durch verdichtete Tage. Ursache: 10-Stunden-Tage bei gleichem Pensum. Wahrscheinlichkeit mittel, Auswirkung hoch. Gegenmaßnahme möglich: ja.
+- **R1 (→ Idee I1):** Service-Erreichbarkeit sinkt. Ursache: gleiche Wochenarbeitszeit auf vier Tage komprimiert. Wahrscheinlichkeit hoch, Auswirkung mittel. Gegenmaßnahme möglich: ja.
+- **R2 (→ Idee I2):** Burnout durch verdichtete Tage. Ursache: 10-Stunden-Tage bei gleichem Pensum. Wahrscheinlichkeit mittel, Auswirkung hoch. Gegenmaßnahme möglich: ja.
 
 ```json
 {
@@ -50,8 +50,8 @@ Zuerst lesbares Markdown, dann ein abschließender `json`-Block. Eintrags-Typ **
   "phase_nr": 5,
   "zusammenfassung": "Hauptrisiken liegen bei reduzierter Erreichbarkeit und Überlastung durch verdichtete Arbeitstage.",
   "eintraege": [
-    { "id": "R1", "risiko": "Service-Erreichbarkeit sinkt", "bezug_idee": "G1", "ursache": "gleiche Wochenarbeitszeit auf vier Tage komprimiert", "eintrittswahrscheinlichkeit": "hoch", "auswirkung": "mittel", "gegenmassnahme_moeglich": true },
-    { "id": "R2", "risiko": "Burnout durch verdichtete Tage", "bezug_idee": "G2", "ursache": "10-Stunden-Tage bei gleichem Pensum", "eintrittswahrscheinlichkeit": "mittel", "auswirkung": "hoch", "gegenmassnahme_moeglich": true }
+    { "id": "R1", "risiko": "Service-Erreichbarkeit sinkt", "bezug_idee": "I1", "ursache": "gleiche Wochenarbeitszeit auf vier Tage komprimiert", "eintrittswahrscheinlichkeit": "hoch", "auswirkung": "mittel", "gegenmassnahme_moeglich": true },
+    { "id": "R2", "risiko": "Burnout durch verdichtete Tage", "bezug_idee": "I2", "ursache": "10-Stunden-Tage bei gleichem Pensum", "eintrittswahrscheinlichkeit": "mittel", "auswirkung": "hoch", "gegenmassnahme_moeglich": true }
   ],
   "offene_punkte": ["Rechtliche Höchstarbeitszeit pro Tag prüfen"],
   "konfidenz": "mittel"

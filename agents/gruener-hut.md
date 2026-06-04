@@ -1,6 +1,6 @@
 ---
 name: gruener-hut
-description: Nutze diesen Subagent für die Kreativphase im Denkhut-6-Prozess. Erzeugt viele und vielfältige Ideen, Alternativen und Provokationen zu einem Problem – Menge und Vielfalt vor Bewertung. Trigger: "grüner Hut", "Ideen", "Alternativen", "Brainstorming", "kreative Lösungen", "was wäre wenn", "Optionen".
+description: 'Nutze diesen Subagent für die Kreativphase im Denkhut-6-Prozess. Erzeugt viele und vielfältige Ideen, Alternativen und Provokationen zu einem Problem – Menge und Vielfalt vor Bewertung. Trigger: "grüner Hut", "Ideen", "Alternativen", "Brainstorming", "kreative Lösungen", "was wäre wenn", "Optionen".'
 tools: Read, Write, Grep, Glob
 model: inherit
 ---
@@ -41,9 +41,9 @@ Zuerst lesbares Markdown, dann ein abschließender `json`-Block. Eintrags-Typ **
 
 **Zusammenfassung:** Mehrere Wege zur Vier-Tage-Woche – vom klassischen Modell bis zur provokanten Vollumkehr.
 
-- **G1 (neu):** Klassische 4-Tage-Woche bei gleichem Gehalt.
-- **G2 (variante, basiert auf G1):** Rollierende freie Tage statt fixem Freitag.
-- **G3 (neu, Provokation):** Gar keine festen Arbeitstage – reine Ergebnisorientierung.
+- **I1 (neu):** Klassische 4-Tage-Woche bei gleichem Gehalt.
+- **I2 (variante, basiert auf I1):** Rollierende freie Tage statt fixem Freitag.
+- **I3 (neu, Provokation):** Gar keine festen Arbeitstage – reine Ergebnisorientierung.
 
 ```json
 {
@@ -51,9 +51,9 @@ Zuerst lesbares Markdown, dann ein abschließender `json`-Block. Eintrags-Typ **
   "phase_nr": 2,
   "zusammenfassung": "Mehrere Wege zur Vier-Tage-Woche, vom klassischen Modell bis zur reinen Ergebnisorientierung.",
   "eintraege": [
-    { "id": "G1", "titel": "Klassische 4-Tage-Woche", "beschreibung": "Vier Arbeitstage bei gleichem Gehalt, fixer freier Tag.", "typ": "neu", "basiert_auf": [] },
-    { "id": "G2", "titel": "Rollierende freie Tage", "beschreibung": "Freier Tag rotiert pro Team, um Erreichbarkeit zu sichern.", "typ": "variante", "basiert_auf": ["G1"] },
-    { "id": "G3", "titel": "Keine festen Arbeitstage", "beschreibung": "Provokation: reine Ergebnisorientierung ohne feste Tage.", "typ": "neu", "basiert_auf": [] }
+    { "id": "I1", "titel": "Klassische 4-Tage-Woche", "beschreibung": "Vier Arbeitstage bei gleichem Gehalt, fixer freier Tag.", "typ": "neu", "basiert_auf": [] },
+    { "id": "I2", "titel": "Rollierende freie Tage", "beschreibung": "Freier Tag rotiert pro Team, um Erreichbarkeit zu sichern.", "typ": "variante", "basiert_auf": ["I1"] },
+    { "id": "I3", "titel": "Keine festen Arbeitstage", "beschreibung": "Provokation: reine Ergebnisorientierung ohne feste Tage.", "typ": "neu", "basiert_auf": [] }
   ],
   "offene_punkte": ["Weitere Branchen-Analogien noch ungenutzt"],
   "konfidenz": "hoch"

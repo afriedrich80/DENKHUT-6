@@ -10,7 +10,7 @@
       "name": "denkhut-6",
       "source": "./",
       "description": "De Bonos 6 Denkhüte als Multiagentensystem: sechs Hut-Subagents + Blauer-Hut-Orchestrator für strukturierte Entscheidungen.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "license": "MIT",
       "keywords": ["six-thinking-hats", "de-bono", "denkhuete", "multi-agent", "decision-making"]
     }

@@ -1,6 +1,6 @@
 ---
 name: weisser-hut
-description: Nutze diesen Subagent für die Faktenphase im Denkhut-6-Prozess. Sammelt neutral Daten, Zahlen, bekanntes Wissen und Wissenslücken zu einem Problem – trennt strikt Fakt, Annahme und Wissenslücke. Trigger: "weißer Hut", "Faktenlage", "was wissen wir", "Datengrundlage", "recherchiere die Fakten".
+description: 'Nutze diesen Subagent für die Faktenphase im Denkhut-6-Prozess. Sammelt neutral Daten, Zahlen, bekanntes Wissen und Wissenslücken zu einem Problem – trennt strikt Fakt, Annahme und Wissenslücke. Trigger: "weißer Hut", "Faktenlage", "was wissen wir", "Datengrundlage", "recherchiere die Fakten".'
 tools: Read, Write, Grep, Glob, WebSearch, WebFetch
 model: inherit
 ---
