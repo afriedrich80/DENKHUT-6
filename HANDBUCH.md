@@ -20,11 +20,13 @@
 **Empfohlen: Installation aus GitHub (zwei Befehle).** In Claude Code eingeben:
 
 ```
-/plugin marketplace add afriedrich80/DENKHUT-6
+/plugin marketplace add https://github.com/afriedrich80/DENKHUT-6.git
 /plugin install denkhut-6@denkhut-6
 ```
 
 Anschließend `/reload-plugins` oder Claude Code neu starten. Spätere Updates: `/plugin marketplace update denkhut-6`.
+
+> **Wichtig:** Die vollständige `https://…git`-URL verwenden. Der Kurzname `afriedrich80/DENKHUT-6` kann lokal auf SSH (`git@github.com`) auflösen und mit `Host key verification failed` scheitern, falls der GitHub-Host-Key nicht in `~/.ssh/known_hosts` steht. Falls du dennoch SSH nutzen willst: einmalig `ssh -T git@github.com` ausführen (Fingerprint bestätigen), dann klappt auch der Kurzname.
 
 Claude Code lädt damit automatisch:
 - die Subagents aus `agents/` (sechs Hüte),

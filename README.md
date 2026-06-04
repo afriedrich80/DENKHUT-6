@@ -62,13 +62,15 @@ flowchart LR
 DENKHUT-6 wird als **Claude-Code-Plugin direkt aus GitHub** installiert – zwei Befehle, kein manuelles Kopieren. In Claude Code eingeben:
 
 ```
-/plugin marketplace add afriedrich80/DENKHUT-6
+/plugin marketplace add https://github.com/afriedrich80/DENKHUT-6.git
 /plugin install denkhut-6@denkhut-6
 ```
 
 Danach `/reload-plugins` ausführen oder Claude Code neu starten. Spätere Updates: `/plugin marketplace update denkhut-6`.
 
 > Voraussetzung: eine aktuelle Claude-Code-Version (der `/plugin`-Befehl muss verfügbar sein).
+>
+> **Tipp:** Nutze die vollständige `https://…git`-URL (oben). Der Kurzname `afriedrich80/DENKHUT-6` kann lokal auf SSH (`git@github.com`) auflösen und dann an einer fehlenden Host-Key-Prüfung scheitern (`Host key verification failed`). Mit der HTTPS-URL tritt das nicht auf.
 
 ### Nutzung
 
