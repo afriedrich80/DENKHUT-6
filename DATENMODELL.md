@@ -11,13 +11,13 @@ Jeder Hut-Subagent liefert genau diesen Umschlag zurück. Die eigentlichen Inhal
 | Feld | Typ | Beschreibung | erlaubte Werte |
 |------|-----|--------------|----------------|
 | `hut` | string | welcher Hut | `weiss`, `rot`, `schwarz`, `gelb`, `gruen`, `blau` |
-| `phase_nr` | integer | Schrittnummer in der Sequenz | ≥ 0 |
+| `phase_nr` | integer | Schrittnummer in der Sequenz (1-basiert) | ≥ 1 |
 | `zusammenfassung` | string | 1–3 Sätze Kernaussage des Huts | frei |
 | `eintraege` | array | typisierte Beiträge (s. u.) | Fakt / Idee / Emotion / Nutzenpunkt / Risiko |
 | `offene_punkte` | string[] | was offen bleibt / an Blau zurückgeht | frei |
 | `konfidenz` | string | Selbsteinschätzung der Sicherheit | `hoch`, `mittel`, `niedrig` |
 
-> Der Blaue Hut liefert statt `eintraege[]` ein `Synthese`-Objekt (s. u.), behält aber `hut`, `phase_nr`, `zusammenfassung`, `offene_punkte`, `konfidenz`.
+> Der Blaue Hut hält `eintraege` leer (`[]`). Bei der **Eröffnung** nutzt er die Felder `problem` und `sequenz`, beim **Abschluss** das Feld `synthese` (Typ `Synthese`, s. u.). Die übrigen Envelope-Felder (`hut`, `phase_nr`, `zusammenfassung`, `offene_punkte`, `konfidenz`) bleiben erhalten.
 
 ## Entity: Fakt (Weißer Hut)
 
@@ -91,7 +91,7 @@ Jeder Hut-Subagent liefert genau diesen Umschlag zurück. Die eigentlichen Inhal
 
 | Feld | Typ | Beschreibung | erlaubte Werte |
 |------|-----|--------------|----------------|
-| `schritt_nr` | integer | laufende Schrittnummer | ≥ 0 |
+| `schritt_nr` | integer | laufende Schrittnummer (1-basiert) | ≥ 1 |
 | `hut` | string | welcher Hut aktiv war | `weiss`, `rot`, `schwarz`, `gelb`, `gruen`, `blau` |
 | `zeit` | string | Zeitstempel (ISO 8601) | frei |
 | `input_referenz` | string | worauf der Hut sich stützte | frei |

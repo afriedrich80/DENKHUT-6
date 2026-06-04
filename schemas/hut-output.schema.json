@@ -21,15 +21,14 @@
     },
     "eintraege": {
       "type": "array",
-      "description": "Die strukturierten Beitraege dieses Huts. Der Typ haengt vom Hut ab (Weiss=Fakt, Gruen=Idee, Gelb=Nutzenpunkt, Schwarz=Risiko, Rot=Emotion, Blau-Abschluss=Synthese).",
+      "description": "Die strukturierten Beitraege dieses Huts. Der Typ haengt vom Hut ab (Weiss=Fakt, Gruen=Idee, Gelb=Nutzenpunkt, Schwarz=Risiko, Rot=Emotion). Beim Blauen Hut bleibt 'eintraege' leer ([]): die Eroeffnung nutzt 'problem'+'sequenz', der Abschluss das Feld 'synthese'.",
       "items": {
         "oneOf": [
           { "$ref": "#/$defs/Fakt" },
           { "$ref": "#/$defs/Idee" },
           { "$ref": "#/$defs/Emotion" },
           { "$ref": "#/$defs/Nutzenpunkt" },
-          { "$ref": "#/$defs/Risiko" },
-          { "$ref": "#/$defs/Synthese" }
+          { "$ref": "#/$defs/Risiko" }
         ]
       }
     },

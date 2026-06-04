@@ -4,7 +4,7 @@ Regeln für Claude Code in **diesem** Repo. Verbindlich beim Arbeiten am bzw. mi
 
 ## Was ist DENKHUT-6
 
-Ein Claude-Code-Plugin, das Edward de Bonos *Six Thinking Hats* als Multiagentensystem umsetzt: sechs Hut-Subagents (`agents/`) plus Blauer-Hut-Orchestrator. Slash-Command als Plugin: `/denkhut-6:denkhut` (namespaced); bei lokaler Kopie ohne Plugin: `/denkhut`. Version 0.1.1, Lizenz MIT.
+Ein Claude-Code-Plugin, das Edward de Bonos *Six Thinking Hats* als Multiagentensystem umsetzt: sechs Hut-Subagents (`agents/`) plus Blauer-Hut-Orchestrator. Slash-Command als Plugin: `/denkhut-6:denkhut` (namespaced); bei lokaler Kopie ohne Plugin: `/denkhut`. Version 0.1.2, Lizenz MIT.
 
 ## Kernkonventionen
 

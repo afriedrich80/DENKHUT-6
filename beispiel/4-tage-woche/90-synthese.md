@@ -74,51 +74,54 @@ realen Pilotdaten, um über die Vollumstellung (I1) zu entscheiden.
   "hut": "blau",
   "phase_nr": 7,
   "zusammenfassung": "Abschließende Synthese: Empfehlung für einen metrikgestützten 6-Monats-Pilot (I7) mit Service-Rotation (I4) statt sofortiger Vollumstellung (I1). Damit werden die schwersten Risiken vermieden und eine belastbare Datenbasis für eine spätere Entscheidung geschaffen.",
-  "eintraege": [
-    {
-      "problemklaerung": "Nicht 'ob' die 4-Tage-Woche, sondern wie sie risikoarm und datenbasiert getestet wird, bevor unternehmensweit umgestellt wird. Tragende Annahmen (F3, F5) und die Wissenslücke zur Kundenreaktion (F6) sind unbelegt.",
-      "fakten_kurz": [
-        "Externe Pilotdaten deuten auf stabile Produktivität (F1), aber nicht branchenspezifisch.",
-        "Fluktuation 14 % über Branchenschnitt (F2) → realer Handlungsdruck.",
-        "Verdichtbarkeit (F3) und nötiger Produktivitätssprung (F5) sind nur Annahmen.",
-        "Service-Erreichbarkeit Mo-Fr 08-18 Uhr ist harte Constraint (F4).",
-        "Kundenreaktion ist unbekannt (F6)."
-      ],
-      "top_ideen": ["I7", "I4", "I1"],
-      "pro": [
-        "N3: Pilot schließt die Annahmen F3/F5 und die Wissenslücke F6.",
-        "N4: Erreichbarkeit bleibt durch Rotation (I4) gewahrt.",
-        "N7: Pilot ist voll reversibel, kein Gesichtsverlust.",
-        "N1/N5/N8: Recruiting-, Bindungs- und Wettbewerbsvorteile bei späterer Vollumstellung (I1)."
-      ],
-      "contra": [
-        "R1/R2/R7: Vollumstellung (I1) birgt Produktivitätseinbruch, Kundenabwanderung und Überlastung.",
-        "R5: Pilot könnte nicht repräsentativ sein.",
-        "R4: Rotationsplanung im Service ist engpassanfällig.",
-        "R6: Neid zwischen Pilot- und Nicht-Pilot-Teams."
-      ],
-      "emotionale_signale": [
-        "Mitarbeitende stark begeistert (E1), aber besorgt wegen Verdichtung (E2).",
-        "Geschäftsführung gemischt: Zuversicht (E3) und Nervosität (E4).",
-        "Kunden skeptisch bzgl. Erreichbarkeit (E5).",
-        "HR stark motiviert (E6), respektiert den Aufwand (E7)."
-      ],
-      "empfehlung": "Keine sofortige Vollumstellung (I1). Stattdessen 6-Monats-Pilot nach I7, kombiniert mit dem Service-Rotationsmodell I4, mit verbindlichen Metriken als Grundlage für eine spätere Go/No-Go-Entscheidung.",
-      "offene_risiken": [
-        "R5 Repräsentativität: durch gemischte statt nur freiwillige Pilotteams mindern.",
-        "R6 Fairness: transparenter Ausrollpfad und offene Kommunikation.",
-        "R4 Service-Engpässe: Vertretungs- und Krankheitspuffer einplanen."
-      ],
-      "naechste_schritte": [
-        "Pilot-Design festlegen: zwei gemischte Abteilungen inkl. Kundenservice, 6 Monate.",
-        "Metriken vorab definieren (Produktivität, Servicelevel, Reaktionszeit, Zufriedenheit, Fluktuation).",
-        "Rotationsplan für die 08-18-Uhr-Abdeckung ausarbeiten (I4) inkl. Puffer.",
-        "Kommunikationsplan für Mitarbeitende (E1/E2) und Kunden (E5) erstellen.",
-        "Go/No-Go-Kriterien und Auswertungstermin nach 6 Monaten verbindlich festhalten."
-      ],
-      "iteration_noetig": true
-    }
-  ],
+  "eintraege": [],
+  "synthese": {
+    "problemklaerung": "Nicht 'ob' die 4-Tage-Woche, sondern wie sie risikoarm und datenbasiert getestet wird, bevor unternehmensweit umgestellt wird. Tragende Annahmen (F3, F5) und die Wissenslücke zur Kundenreaktion (F6) sind unbelegt.",
+    "fakten_kurz": [
+      "Externe Pilotdaten deuten auf stabile Produktivität (F1), aber nicht branchenspezifisch.",
+      "Fluktuation 14 % über Branchenschnitt (F2) → realer Handlungsdruck.",
+      "Verdichtbarkeit (F3) und nötiger Produktivitätssprung (F5) sind nur Annahmen.",
+      "Service-Erreichbarkeit Mo-Fr 08-18 Uhr ist harte Constraint (F4).",
+      "Kundenreaktion ist unbekannt (F6)."
+    ],
+    "top_ideen": [
+      "I7",
+      "I4",
+      "I1"
+    ],
+    "pro": [
+      "N3: Pilot schließt die Annahmen F3/F5 und die Wissenslücke F6.",
+      "N4: Erreichbarkeit bleibt durch Rotation (I4) gewahrt.",
+      "N7: Pilot ist voll reversibel, kein Gesichtsverlust.",
+      "N1/N5/N8: Recruiting-, Bindungs- und Wettbewerbsvorteile bei späterer Vollumstellung (I1)."
+    ],
+    "contra": [
+      "R1/R2/R7: Vollumstellung (I1) birgt Produktivitätseinbruch, Kundenabwanderung und Überlastung.",
+      "R5: Pilot könnte nicht repräsentativ sein.",
+      "R4: Rotationsplanung im Service ist engpassanfällig.",
+      "R6: Neid zwischen Pilot- und Nicht-Pilot-Teams."
+    ],
+    "emotionale_signale": [
+      "Mitarbeitende stark begeistert (E1), aber besorgt wegen Verdichtung (E2).",
+      "Geschäftsführung gemischt: Zuversicht (E3) und Nervosität (E4).",
+      "Kunden skeptisch bzgl. Erreichbarkeit (E5).",
+      "HR stark motiviert (E6), respektiert den Aufwand (E7)."
+    ],
+    "empfehlung": "Keine sofortige Vollumstellung (I1). Stattdessen 6-Monats-Pilot nach I7, kombiniert mit dem Service-Rotationsmodell I4, mit verbindlichen Metriken als Grundlage für eine spätere Go/No-Go-Entscheidung.",
+    "offene_risiken": [
+      "R5 Repräsentativität: durch gemischte statt nur freiwillige Pilotteams mindern.",
+      "R6 Fairness: transparenter Ausrollpfad und offene Kommunikation.",
+      "R4 Service-Engpässe: Vertretungs- und Krankheitspuffer einplanen."
+    ],
+    "naechste_schritte": [
+      "Pilot-Design festlegen: zwei gemischte Abteilungen inkl. Kundenservice, 6 Monate.",
+      "Metriken vorab definieren (Produktivität, Servicelevel, Reaktionszeit, Zufriedenheit, Fluktuation).",
+      "Rotationsplan für die 08-18-Uhr-Abdeckung ausarbeiten (I4) inkl. Puffer.",
+      "Kommunikationsplan für Mitarbeitende (E1/E2) und Kunden (E5) erstellen.",
+      "Go/No-Go-Kriterien und Auswertungstermin nach 6 Monaten verbindlich festhalten."
+    ],
+    "iteration_noetig": true
+  },
   "offene_punkte": [
     "Zweiter DENKHUT-6-Durchlauf nach Pilotende mit realen Daten zur Entscheidung über I1."
   ],

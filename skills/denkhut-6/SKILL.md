@@ -101,6 +101,6 @@ Ordner: `denkhut-sitzungen/<slug>/`. Nummerierte Dateien (Sortier-Reihenfolge un
 Jede Hut-Datei enthält den vollständigen Envelope des Huts. Bei Iterationen Suffix `-r2` (z. B. `20-gruen-r2.md`).
 
 ## Beispiel-Kommando & erwartetes Ergebnis
-**Eingabe:** `/denkhut "Sollen wir die 4-Tage-Woche einführen?"`
+**Eingabe:** `/denkhut-6:denkhut Sollen wir die 4-Tage-Woche einführen?` (als Plugin; lokale Kopie ohne Namespace: `/denkhut …`)
 **Ablauf:** Blau klärt (ggf. 1–3 Rückfragen) → `entscheidung`-Sequenz → Weiß sammelt Fakten → Grün generiert Modelle → Gelb & Schwarz parallel bewerten → Rot liefert Stimmungsbild → Blau synthetisiert.
 **Ergebnis:** Ordner `denkhut-sitzungen/4-tage-woche/` mit `00-problem.md`, `10-weiss.md`, `20-gruen.md`, `30-gelb.md`, `40-schwarz.md`, `50-rot.md`, `90-synthese.md`, `protokoll.md` – inkl. klarer Empfehlung mit Begründung, Risiken und nächsten Schritten.
