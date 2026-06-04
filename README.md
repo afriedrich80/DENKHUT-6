@@ -59,7 +59,9 @@ flowchart LR
 
 ## Installation
 
-DENKHUT-6 wird als **Claude-Code-Plugin direkt aus GitHub** installiert – zwei Befehle, kein manuelles Kopieren. In Claude Code eingeben:
+### Weg 1 — direkt aus GitHub (empfohlen, **kein GitHub-Account nötig**)
+
+Das Repo ist öffentlich; der Zugriff läuft **anonym über HTTPS** – ohne Account, ohne Login, ohne SSH-Key. Zwei Befehle in Claude Code:
 
 ```
 /plugin marketplace add https://github.com/afriedrich80/DENKHUT-6.git
@@ -68,9 +70,24 @@ DENKHUT-6 wird als **Claude-Code-Plugin direkt aus GitHub** installiert – zwei
 
 Danach `/reload-plugins` ausführen oder Claude Code neu starten. Spätere Updates: `/plugin marketplace update denkhut-6`.
 
-> Voraussetzung: eine aktuelle Claude-Code-Version (der `/plugin`-Befehl muss verfügbar sein).
->
-> **Tipp:** Nutze die vollständige `https://…git`-URL (oben). Der Kurzname `afriedrich80/DENKHUT-6` kann lokal auf SSH (`git@github.com`) auflösen und dann an einer fehlenden Host-Key-Prüfung scheitern (`Host key verification failed`). Mit der HTTPS-URL tritt das nicht auf.
+> Immer die vollständige **`https://…git`-URL** verwenden (nicht den Kurznamen `afriedrich80/DENKHUT-6`). Der Kurzname kann lokal auf SSH (`git@github.com`) auflösen und mit `Host key verification failed` scheitern. Die HTTPS-URL braucht keinerlei GitHub-Anbindung.
+
+### Weg 2 — ohne Git / offline / hinter Firewall
+
+Wenn kein Git verfügbar ist oder GitHub blockiert wird: Repo als **ZIP herunterladen** (GitHub: Button **„Code → Download ZIP"**, oder eine Release-ZIP von der [Releases-Seite](https://github.com/afriedrich80/DENKHUT-6/releases)), entpacken, dann Claude Code mit dem lokalen Ordner starten:
+
+```
+claude --plugin-dir ./DENKHUT-6
+```
+
+Alternativ den entpackten Ordner als **lokalen Marketplace** registrieren (er enthält `.claude-plugin/marketplace.json`):
+
+```
+/plugin marketplace add /pfad/zu/DENKHUT-6
+/plugin install denkhut-6@denkhut-6
+```
+
+> Voraussetzung in allen Fällen: eine aktuelle Claude-Code-Version (der `/plugin`-Befehl muss verfügbar sein).
 
 ### Nutzung
 
@@ -87,15 +104,9 @@ Nach der Installation sind Orchestrator-Skill und die sechs Hut-Subagents aktiv.
 - **Per natürlicher Sprache** – Claude ruft den Orchestrator automatisch auf:
   „Analysiere mit den sechs Denkhüten, ob wir auf die 4-Tage-Woche umstellen sollten."
 
-### Alternative: lokal ohne Marketplace
+### Weg 3 — als persönliche/Projekt-Dateien (ohne Plugin-Mechanik)
 
-Zum Entwickeln/Testen ohne Installation:
-
-```
-claude --plugin-dir ./denkhut-6
-```
-
-Oder die Inhalte von `agents/`, `skills/` und `commands/` nach `~/.claude/` (global) bzw. `<projekt>/.claude/` (projektweit) kopieren – dann laufen die Skills **ohne** Namespace, der Command lautet schlicht `/denkhut`.
+Die Inhalte von `agents/`, `skills/` und `commands/` nach `~/.claude/` (global) bzw. `<projekt>/.claude/` (projektweit) kopieren – dann laufen die Skills **ohne** Namespace, der Command lautet schlicht `/denkhut`. Praktisch zum Anpassen/Weiterentwickeln.
 
 ## Wie es funktioniert
 

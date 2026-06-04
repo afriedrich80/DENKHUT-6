@@ -26,7 +26,7 @@
 
 Anschließend `/reload-plugins` oder Claude Code neu starten. Spätere Updates: `/plugin marketplace update denkhut-6`.
 
-> **Wichtig:** Die vollständige `https://…git`-URL verwenden. Der Kurzname `afriedrich80/DENKHUT-6` kann lokal auf SSH (`git@github.com`) auflösen und mit `Host key verification failed` scheitern, falls der GitHub-Host-Key nicht in `~/.ssh/known_hosts` steht. Falls du dennoch SSH nutzen willst: einmalig `ssh -T git@github.com` ausführen (Fingerprint bestätigen), dann klappt auch der Kurzname.
+> **Kein GitHub-Account nötig.** Das Repo ist öffentlich; der Zugriff läuft anonym über HTTPS – ohne Login, ohne SSH-Key. Immer die vollständige `https://…git`-URL verwenden (nicht den Kurznamen `afriedrich80/DENKHUT-6`): der Kurzname kann lokal auf SSH auflösen und mit `Host key verification failed` scheitern. (Wer bewusst SSH will: einmalig `ssh -T git@github.com`, Fingerprint bestätigen.)
 
 Claude Code lädt damit automatisch:
 - die Subagents aus `agents/` (sechs Hüte),
@@ -37,7 +37,9 @@ Claude Code lädt damit automatisch:
 
 **Test.** Rufe `/denkhut-6:denkhut Test-Thema` auf. Der Blaue Hut sollte mit der Problemklärung antworten. Beim ersten Lauf entsteht `denkhut-sitzungen/` im Arbeitsverzeichnis (in `.gitignore` ausgeschlossen).
 
-**Alternative ohne Marketplace.** Zum Testen: `claude --plugin-dir ./denkhut-6`. Oder die Ordner `agents/`, `skills/`, `commands/` nach `~/.claude/` bzw. `<projekt>/.claude/` kopieren – dann ohne Namespace als `/denkhut`.
+**Ohne Git / offline / hinter Firewall.** Repo als ZIP herunterladen (GitHub „Code → Download ZIP" oder eine Release-ZIP), entpacken, dann `claude --plugin-dir ./DENKHUT-6` starten – oder den Ordner als lokalen Marketplace registrieren: `/plugin marketplace add /pfad/zu/DENKHUT-6` → `/plugin install denkhut-6@denkhut-6`. Beides braucht weder Git noch GitHub-Konto.
+
+**Als persönliche Dateien.** Die Ordner `agents/`, `skills/`, `commands/` nach `~/.claude/` bzw. `<projekt>/.claude/` kopieren – dann ohne Namespace als `/denkhut`.
 
 ---
 
