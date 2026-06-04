@@ -12,6 +12,19 @@
 
 Die *Six Thinking Hats* sind eine Methode des **parallelen Denkens**: Statt dass alle gleichzeitig argumentieren und gegeneinander debattieren, betrachten alle Beteiligten dasselbe Problem zur selben Zeit aus *einer* festgelegten Richtung. Jeder „Hut" steht für einen Denkmodus – nicht für eine Person, sondern für eine **Rolle**. Man setzt einen Hut bewusst auf und wieder ab. So werden Fakten, Gefühle, Risiken, Nutzen und Ideen sauber getrennt statt vermischt. DENKHUT-6 übersetzt diese sechs Modi in sechs spezialisierte Subagents, die nacheinander oder parallel auf ein Problem schauen und deren Beiträge der Blaue Hut zu einer Entscheidung zusammenführt.
 
+## Wofür eignet sich DENKHUT-6?
+
+DENKHUT-6 ist **nicht nur für Probleme** da, sondern für jede Fragestellung, die von mehreren getrennten Denkperspektiven profitiert – ausdrücklich auch für **Ideen- und Produktentwicklung**. Der **Grüne Hut** ist der Kreativ-Motor: Eine Idee wird nicht nur geprüft, sondern aktiv ausgebaut (Varianten, Kombinationen, MVP-Zuschnitte), bevor Gelb und Schwarz sie abwägen.
+
+| Einsatzzweck | Beispiel | Empfohlene Sequenz |
+|---|---|---|
+| Entscheidung (Go/No-Go) | „Sollen wir die 4-Tage-Woche einführen?" | `entscheidung` |
+| **Idee / Produktentwicklung** | „Idee für ein SaaS-Tool – tragfähig? Wie zuschneiden?" | `ideenfindung` |
+| Bewertung / Review | „Ist dieser Plan gut?" | `bewertung` |
+| Schneller Risiko-/Plausibilitäts-Check | „Vor dem Commit kurz gegenchecken" | `schnell-review` |
+
+Für eine **Produktidee** liefern die Hüte z. B.: Weiß = Markt/Zielgruppe/Annahmen · Grün = Feature- und MVP-Varianten · Gelb = Nutzen/Geschäftsmodell · Schwarz = technische & Markt-Risiken · Rot = Bauchgefühl von Nutzern/Investoren/Team · Blau = MVP-Empfehlung & nächste Schritte. Vollständig durchgespielt: [`beispiel/software-produktidee/`](beispiel/software-produktidee/).
+
 ## Die 6 Hüte
 
 | Hut | Denkmodus | liefert | Subagent |

@@ -5,6 +5,13 @@ Alle nennenswerten Änderungen an DENKHUT-6 werden in dieser Datei dokumentiert.
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
 und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 
+## [Unreleased]
+
+### Added
+
+- README-Abschnitt „Wofür eignet sich DENKHUT-6?" – stellt klar, dass die Methode auch für **Ideen- und Produktentwicklung** geeignet ist (nicht nur Probleme), mit Use-Case-/Sequenz-Zuordnung.
+- Zweites durchgespieltes Beispiel `beispiel/software-produktidee/` (SaaS-Produktidee, Sequenz `ideenfindung`, Grün früh/breit, Rot vor Gelb/Schwarz).
+
 ## [0.1.0] – 2026-06-04 – Initiale Veröffentlichung
 
 ### Added
