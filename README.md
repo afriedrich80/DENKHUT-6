@@ -119,9 +119,32 @@ Nach der Installation sind Orchestrator-Skill und die sechs Hut-Subagents aktiv.
 
 Die Inhalte von `agents/`, `skills/` und `commands/` nach `~/.claude/` (global) bzw. `<projekt>/.claude/` (projektweit) kopieren – dann laufen die Skills **ohne** Namespace, der Command lautet schlicht `/denkhut`. Praktisch zum Anpassen/Weiterentwickeln.
 
-## Wie es funktioniert
+## Wie das Multiagentensystem arbeitet
 
-Jeder Hut ist ein **echter Claude-Code-Subagent** (Definition in `agents/`) mit **isoliertem Kontext**. Der Blaue Hut ruft die Hut-Subagents über das **Agent-Tool** auf, gibt ihnen den jeweils relevanten Vor-Kontext mit und sammelt deren strukturierte Ausgaben ein. Weil jeder Hut nur seinen einen Denkmodus kennt, bleibt das Denken **sauber getrennt** – kein Hut „rutscht" in eine andere Rolle. Hüte ohne Abhängigkeit (z. B. **Gelb** und **Schwarz**) laufen **parallel**. Am Ende verdichtet der Blaue Hut alle Beiträge zu einer Synthese mit Empfehlung.
+DENKHUT-6 ist **kein einzelnes Modell, das nacheinander sechs Rollen „spielt"**, sondern ein orchestriertes Team aus echten Subagenten.
+
+**1 · Echte Subagenten statt Rollenspiel.**
+Jeder Hut ist ein eigener Claude-Code-Subagent (Definition in `agents/`) mit **eigenem, isoliertem Kontextfenster** und eigenem System-Prompt. Der Blaue Hut (Orchestrator) startet sie über das **Agent-Tool**. Weil jeder Hut nur seinen einen Denkmodus kennt und die Ausgaben der anderen nicht sieht, bleibt das Denken sauber getrennt – kein Hut „rutscht" in eine andere Rolle. Genau das ist der Unterschied zu einem einzigen Prompt, der bloß vorgibt, sechs Perspektiven zu sein.
+
+**2 · Echte Parallelität.**
+Hüte ohne Abhängigkeit – allen voran **Gelb** und **Schwarz** – werden in **einer** Nachricht zusammen gespawnt und laufen damit **gleichzeitig**, jeder im eigenen Kontext. Wo es Abhängigkeiten gibt (Weiß muss die Faktenbasis liefern, bevor Grün Ideen erzeugt), läuft es bewusst nacheinander.
+
+```
+🔵 Blau (Orchestrator) ── spawnt die Hüte übers Agent-Tool, sammelt ihre Ergebnisse
+   │
+   ⚪ Weiß ─► 🟢 Grün ─► 🔴 Rot ─►  🟡 Gelb ‖ ⚫ Schwarz   (‖ = gleichzeitig)
+   │                                  (eigener Kontext, sehen sich gegenseitig nicht)
+   ▼
+   🔵 Blau: Synthese ─► Empfehlung ─(iteration_noetig? fragt dich)─► ggf. weitere Runde
+```
+
+**3 · Koordination über den Dirigenten – kein Direkt-Chat.**
+Die Hüte „reden" **nicht direkt miteinander**. Sie arbeiten zusammen über den Blauen Hut und über gemeinsame Artefakte (die Sitzungsdateien mit stabilen IDs): Blau gibt jedem Hut genau den relevanten Vor-Kontext, sammelt die strukturierten Ausgaben ein und verdichtet sie zur Synthese. Dass Gelb und Schwarz einander **nicht** sehen, ist Absicht – nur so bleibt ihre Bewertung unvoreingenommen (De Bonos Prinzip der getrennten Denkmodi).
+
+**4 · Iteration als Human-Gate – du bestimmst die Runden.**
+Standard ist **ein** Durchlauf. Sieht der Blaue Hut Bedarf (große Wissenslücken, kritisches Risiko ohne Gegen-Idee), setzt er `iteration_noetig: true`, **schlägt eine konkrete weitere Runde vor und fragt dich um Freigabe**. Eine weitere Runde startet nur mit deinem ausdrücklichen Ja – es iteriert nichts automatisch.
+
+> **Eine „Runde" = ein kompletter Durchlauf der Hut-Sequenz.** Innerhalb einer Runde spricht jeder Hut **genau einmal** (an den Orchestrator) – kein Hin-und-Her, keine Debatte.
 
 ## Projektstruktur
 
