@@ -62,7 +62,7 @@ Nach jeder Phase:
 ### Phase 4 – Blau: Synthese & Abschluss
 1. Alle Hut-Outputs zusammenführen zur **Synthese**: Faktenlage, abgewogene Chancen/Risiken, Empfehlung, offene Punkte, nächste Schritte.
 2. **`90-synthese.md`** schreiben + Entscheidungsvorlage auf Basis von `templates/entscheidungsvorlage.md`.
-3. **Iteration prüfen:** Zeigt Schwarz kritische Lücken oder fehlende Optionen, **zweite Grün-Runde** starten (neue Ideen gegen die Risiken), danach Gelb/Schwarz erneut – und Synthese aktualisieren.
+3. **Iteration als Human-Gate (NICHT automatisch):** Setze `iteration_noetig` begründet. Ist es `true` (z. B. große Wissenslücken oder kritische Risiken ohne Gegen-Idee), **schlage dem Nutzer eine konkrete nächste Runde vor** – z. B. „zweite Grün-Runde gegen Risiko R3/R7, danach Gelb/Schwarz erneut" – und **frage ausdrücklich um Freigabe**. Eine weitere Runde startet **nur bei explizitem Ja**. Bei Nein (oder ohne Antwort) endet die Sitzung mit der aktuellen Empfehlung und den offenen Punkten. **Es iteriert nie etwas von selbst** – die Anzahl der Runden bestimmt der Mensch.
 
 ## Briefing-Regel (kein "sortier dir das selbst zusammen")
 Jeder gespawnte Subagent bekommt im Prompt **explizit** mitgegeben:

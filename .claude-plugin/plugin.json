@@ -1,6 +1,6 @@
 {
   "name": "denkhut-6",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Multiagentensystem nach De Bonos 6 Denkhüten – sechs Hut-Subagents + Blauer-Hut-Orchestrator für strukturierte Entscheidungen.",
   "author": { "name": "Andreas" },
   "license": "MIT",

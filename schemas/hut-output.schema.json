@@ -167,7 +167,7 @@
         "empfehlung": { "type": "string", "description": "Die abschliessende Handlungsempfehlung." },
         "offene_risiken": { "type": "array", "description": "Risiken, die trotz Empfehlung bestehen bleiben.", "items": { "type": "string" } },
         "naechste_schritte": { "type": "array", "description": "Konkrete naechste Schritte.", "items": { "type": "string" } },
-        "iteration_noetig": { "type": "boolean", "description": "Ob ein weiterer Denkdurchlauf noetig ist." },
+        "iteration_noetig": { "type": "boolean", "description": "Vorschlag, ob ein weiterer Denkdurchlauf noetig ist. Weitere Runden laufen nur nach ausdruecklicher Freigabe des Nutzers (Human-Gate), nie automatisch." },
         "iteration_begruendung": { "type": "string", "description": "Optionale Begruendung, warum (k)eine weitere Iteration noetig ist." }
       },
       "required": ["problemklaerung", "fakten_kurz", "top_ideen", "pro", "contra", "emotionale_signale", "empfehlung", "offene_risiken", "naechste_schritte", "iteration_noetig"],

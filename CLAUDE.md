@@ -4,7 +4,7 @@ Regeln für Claude Code in **diesem** Repo. Verbindlich beim Arbeiten am bzw. mi
 
 ## Was ist DENKHUT-6
 
-Ein Claude-Code-Plugin, das Edward de Bonos *Six Thinking Hats* als Multiagentensystem umsetzt: sechs Hut-Subagents (`agents/`) plus Blauer-Hut-Orchestrator. Slash-Command als Plugin: `/denkhut-6:denkhut` (namespaced); bei lokaler Kopie ohne Plugin: `/denkhut`. Version 0.1.5, Lizenz MIT.
+Ein Claude-Code-Plugin, das Edward de Bonos *Six Thinking Hats* als Multiagentensystem umsetzt: sechs Hut-Subagents (`agents/`) plus Blauer-Hut-Orchestrator. Slash-Command als Plugin: `/denkhut-6:denkhut` (namespaced); bei lokaler Kopie ohne Plugin: `/denkhut`. Version 0.1.6, Lizenz MIT.
 
 ## Kernkonventionen
 
@@ -16,6 +16,7 @@ Ein Claude-Code-Plugin, das Edward de Bonos *Six Thinking Hats* als Multiagenten
 - **Ausgabeordner.** Jede Sitzung nach `denkhut-sitzungen/<slug>/` mit einer Datei pro Schritt (`00-problem.md`, `10-weiss.md`, `20-gruen.md`, `30-gelb.md`, `40-schwarz.md`, `50-rot.md`, `90-synthese.md`) plus `protokoll.md`.
 - **Protokollpflicht.** Jeder Schritt erzeugt einen Logeintrag (`schritt_nr`, `hut`, `zeit`, `input_referenz`, `output_referenz`).
 - **Sequenzen.** Default `entscheidung`; weiter `bewertung`, `ideenfindung`, `schnell-review` (Reihenfolgen in `DATENMODELL.md`).
+- **Iteration nur per Human-Gate.** Standard ist **ein** Durchlauf. Weitere Runden iterieren nie automatisch: Blau setzt `iteration_noetig`, schlägt eine konkrete nächste Runde vor und startet sie nur nach **ausdrücklicher Freigabe des Nutzers**. Die Anzahl der Runden bestimmt der Mensch.
 
 ## Validierung (vor jedem Release)
 

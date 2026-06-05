@@ -61,7 +61,7 @@ Blau hält `eintraege` leer (`[]`): die **Eröffnung** nutzt die Felder `problem
 3. **Hüte ausführen.** Der Orchestrator durchläuft die Sequenz, reicht jeder Rolle ihren Eingabe-Kontext und sammelt den Envelope ein.
 4. **Parallelisieren.** Rollen ohne gegenseitige Abhängigkeit (Gelb, Schwarz) werden gleichzeitig ausgeführt.
 5. **Synthese (Blau).** Alle Beiträge werden zu Empfehlung, offenen Risiken und nächsten Schritten verdichtet.
-6. **Iterieren.** Bei `iteration_noetig` startet eine gezielte weitere Runde.
+6. **Iterieren (Human-Gate).** Bei `iteration_noetig` **schlägt** Blau eine gezielte weitere Runde **vor** und holt die **Freigabe des Menschen** ein. Ohne Zustimmung endet der Prozess mit der Empfehlung. Es iteriert nichts automatisch; die Zahl der Durchläufe bestimmt der Mensch.
 
 ### Sequenzen
 

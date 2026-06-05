@@ -5,6 +5,12 @@ Alle nennenswerten Änderungen an DENKHUT-6 werden in dieser Datei dokumentiert.
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
 und das Projekt folgt [Semantic Versioning](https://semver.org/lang/de/).
 
+## [0.1.6] – 2026-06-04 – Iteration als Human-Gate
+
+### Changed
+
+- **Weitere Denkrunden laufen nie automatisch.** Standard ist ein Durchlauf. Setzt der Blaue Hut `iteration_noetig: true`, **schlägt er eine konkrete nächste Runde vor und holt die ausdrückliche Freigabe des Nutzers** ein (Human-Gate); ohne Ja endet die Sitzung mit der Empfehlung. Die Anzahl der Runden bestimmt der Mensch. Verankert in Orchestrator-Skill, Blau-Agent, CONVENTIONS, CLAUDE.md, HANDBUCH und den `iteration_noetig`-Beschreibungen der Schemas.
+
 ## [0.1.5] – 2026-06-04 – Geführter Kurzstart
 
 ### Added
@@ -95,6 +101,7 @@ Behebt zwei in einem intensiven Methodik-Audit gefundene Treue-Lücken. Die Kern
 - Plugin-Manifest, MIT-Lizenz und `.gitignore`.
 - Marketplace-Manifest `.claude-plugin/marketplace.json` für die Ein-Befehl-Installation aus GitHub (`/plugin marketplace add afriedrich80/DENKHUT-6` → `/plugin install denkhut-6@denkhut-6`).
 
+[0.1.6]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.6
 [0.1.5]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.5
 [0.1.4]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.4
 [0.1.3]: https://github.com/afriedrich80/DENKHUT-6/releases/tag/v0.1.3

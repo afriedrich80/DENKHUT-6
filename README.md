@@ -4,7 +4,7 @@
 
 ![Lizenz: MIT](https://img.shields.io/badge/Lizenz-MIT-green.svg)
 ![Built for Claude Code](https://img.shields.io/badge/Built%20for-Claude%20Code-5A4FCF.svg)
-![Version](https://img.shields.io/badge/Version-0.1.5-blue.svg)
+![Version](https://img.shields.io/badge/Version-0.1.6-blue.svg)
 
 **DENKHUT-6** bringt Edward de Bonos Methode der *Six Thinking Hats* als echtes Multiagentensystem nach Claude Code: Jeder Denkhut ist ein eigener Subagent mit isoliertem Kontext, der Blaue Hut orchestriert die Sitzung.
 

@@ -124,13 +124,15 @@ Der jeweilige Hut-Subagent läuft dann allein und liefert seinen Output-Envelope
 
 ## 5. Iteration
 
-Schließt der Blaue Hut mit `iteration_noetig: true`, lohnt eine weitere Runde. Typische Auslöser:
+**Standard ist genau ein Durchlauf.** Wie viele Runden gelaufen werden, **bestimmst du** — der Blaue Hut iteriert nie von selbst.
+
+Schließt der Blaue Hut mit `iteration_noetig: true`, **schlägt er dir eine konkrete weitere Runde vor und fragt um Freigabe** (Human-Gate). Erst mit deinem ausdrücklichen **Ja** startet sie; bei Nein endet die Sitzung mit der Empfehlung und den offenen Punkten. Typische Auslöser für einen solchen Vorschlag:
 
 - **Offene Wissenslücken** (Weiß): erst Daten beschaffen, dann erneut bewerten.
-- **Risiko mit Gegenmaßnahme** (Schwarz): Grün soll die Gegenmaßnahme als neue Variante ausarbeiten.
+- **Kritisches Risiko ohne Gegen-Idee** (Schwarz): Grün soll in einer zweiten Runde Gegen-Ideen ausarbeiten, danach Gelb/Schwarz erneut.
 - **Starke negative Emotion** (Rot): Ursache klären, bevor entschieden wird.
 
-Für die nächste Runde nennst du dem Blauen Hut das offene Element; er ruft gezielt die nötigen Hüte erneut auf. Iterationen werden im selben Sitzungsordner mit erhöhter Schrittnummer protokolliert.
+Gibst du frei, ruft der Blaue Hut gezielt die nötigen Hüte erneut auf. Iterationen werden im selben Sitzungsordner mit erhöhter Schrittnummer protokolliert (z. B. Datei-Suffix `-r2`).
 
 ---
 
